@@ -12,5 +12,7 @@ public class Ex_01 {
 		System.out.println("마신 테스트");
 		
 		System.out.println("마신");
+		
+		System.out.println("ㅁㅅ");
 	}
 }
