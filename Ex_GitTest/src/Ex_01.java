@@ -14,5 +14,8 @@ public class Ex_01 {
 		System.out.println("마신");
 		
 		System.out.println("ㅁㅅ");
+		
+		
+		System.out.println("마신 넘 커엽네여 ㅋ__ㅋ ");
 	}
 }
