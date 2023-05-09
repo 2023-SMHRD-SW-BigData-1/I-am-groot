@@ -5,6 +5,8 @@ public class Ex_01 {
 	
 		System.out.println("히주히주 두번째 커밋");
 		
+		System.out.println("마신 세번째 커밋");
+		
 		
 		
 	}
