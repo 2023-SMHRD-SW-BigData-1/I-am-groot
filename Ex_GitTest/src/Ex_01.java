@@ -8,6 +8,7 @@ public class Ex_01 {
 		System.out.println("마신 세번째 커밋");
 		
 		System.out.println("ㅁㅈ 네번째 커밋");
-		
+
+		System.out.println("마신 테스트");
 	}
 }
