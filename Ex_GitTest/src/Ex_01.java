@@ -21,5 +21,6 @@ public class Ex_01 {
 		System.out.println("b");
 		System.out.println("테스트");
 		
+		
 	}
 }
