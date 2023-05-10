@@ -17,5 +17,12 @@ public class Ex_01 {
 		
 		
 		System.out.println("마신 넘 커엽네여 ㅋ__ㅋ ");
+		
+		System.out.println("b");
+		System.out.println("테스트");
+		
+		
+		System.out.println("제가커밋해서푸시하면 업뎃되는지 함 해볼게여 !~~!");
+		
 	}
 }
