@@ -5,14 +5,31 @@ public class PlayerDTO {
 	private String ID;
 	private String PW;
 	private String NICK;
+	private int POINT ; 
 	
 	
-	
+	public int getPOINT() {
+		return POINT;
+	}
+
+
+	public void setPOINT(int pOINT) {
+		POINT = pOINT;
+	}
+
+
+	public PlayerDTO(int pOINT) {
+		super();
+		POINT = pOINT;
+	}
+
+
 	public PlayerDTO(String iD, String pW, String nICK) {
 		super();
 		ID = iD;
 		PW = pW;
 		NICK = nICK;
+		
 	}
 	
 	
