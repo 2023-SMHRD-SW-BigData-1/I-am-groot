@@ -17,10 +17,11 @@ public class DAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
-			String db_id = "player_info";
+			String db_id = "INFO";
 			String db_pw = "12345";
 
 			conn = DriverManager.getConnection(url, db_id, db_pw);
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -48,7 +49,7 @@ public class DAO {
 		try {
 
 			getConn();
-			String sql = "INSERT INTO MEMBER_INFO VALUES(?,?,?)";
+			String sql = "INSERT INTO INFO VALUES(?,?,?)";
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setString(1, pdto.getID());
@@ -73,7 +74,7 @@ public class DAO {
 	// 로그인 
 	public PlayerDTO login(String id, String pw) {
 		getConn();
-		String sql = "SELECT * FROM MEMBER_INFO WHERE ID = ? AND PW = ?";
+		String sql = "SELECT * FROM INFO WHERE ID = ? AND PW = ?";
 		PlayerDTO pdto = null;
 		try {
 			psmt = conn.prepareStatement(sql);
