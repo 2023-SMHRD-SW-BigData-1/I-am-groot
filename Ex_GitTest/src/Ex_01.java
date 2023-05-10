@@ -22,7 +22,10 @@ public class Ex_01 {
 		System.out.println("테스트");
 		
 		
-		System.out.println("제가커밋해서푸시하면 업뎃되는지 함 해볼게여 !~~!");
-		
+//<<<<<<< HEAD
+//		System.out.println("제가커밋해서푸시하면 업뎃되는지 함 해볼게여 !~~!");
+//		
+//=======
+//>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 	}
 }
