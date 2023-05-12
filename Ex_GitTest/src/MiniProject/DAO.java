@@ -49,13 +49,13 @@ public class DAO {
 		try {
 
 			getConn();
-			String sql = "INSERT INTO INFO VALUES(?,?,?)";
+			String sql = "INSERT INTO PLAYER_INFO VALUES(?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setString(1, pdto.getID());
 			psmt.setString(2, pdto.getPW());
 			psmt.setString(3, pdto.getNICK());
-
+			psmt.setString(4, null);
 			row = psmt.executeUpdate();
 
 		} catch (Exception e) {
@@ -74,7 +74,7 @@ public class DAO {
 	// 로그인 
 	public PlayerDTO login(String id, String pw) {
 		getConn();
-		String sql = "SELECT * FROM INFO WHERE ID = ? AND PW = ?";
+		String sql = "SELECT * FROM PLAYER_INFO WHERE ID = ? AND PW = ?";
 		PlayerDTO pdto = null;
 		try {
 			psmt = conn.prepareStatement(sql);
