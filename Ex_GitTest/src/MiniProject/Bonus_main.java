@@ -16,15 +16,16 @@ public class Bonus_main {
 		System.out.print("배팅 point : ");
 		int battpoint = sc.nextInt();
 
-		// =========================
-
+		// =========================1
+		
+		
 		System.out.println("문제를 읽고 답을 입력하시오");
 
-		String answer = "모짜렐라";
 
 		// 랜덤으로 문제 출제 되면
 
 		System.out.print("신데렐라가 잠을 못자면? ");
+		String answer = "모짜렐라";
 		String useranswer = sc.next();
 		
 		if(useranswer.equals(answer)) {
