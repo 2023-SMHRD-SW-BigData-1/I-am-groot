@@ -35,11 +35,11 @@ public class Game_Main {
 		System.out.println();
 
 		while (true) {
-			System.out.print("[1]회원가입 [2]로그인 [3]전체랭킹보기 [4]게임설명 >> ");
+			System.out.print("[1]너 내 동료가 돼라! [2]모험의 시작 [3]전체랭킹보기 [4]게임설명 >> ");
 			int input = sc.nextInt();
 			// 회원가입
 			if (input == 1) {
-				System.out.println("=====회원가입을 진행합니다=====");
+				System.out.println("===== 동료 명부에 이름 올리기 =====");
 
 				System.out.print("네 이름은 무엇이냐 : ");
 				String id = sc.next();
@@ -50,7 +50,7 @@ public class Game_Main {
 				int cnt = dao.join(pdto);
 
 				if (cnt > 0) {
-					System.out.println("회원가입 성공");
+					System.out.println("귀 활짝 열어놓으라구!");
 					PlayerDTO pdt = new PlayerDTO(id, point);
 					int low = dao.pointID(pdt);
 					if (low > 0) {
@@ -59,19 +59,19 @@ public class Game_Main {
 						System.out.println("저장실패");
 					}
 				} else {
-					System.out.println("회원가입 실패");
+					System.out.println("동료가 되기 싫은거야? 다시 시도해보라구!");
 				}
 				// 로그인
 			} else if (input == 2) {
 
-				System.out.println("===== 로그인을 진행합니다 =====");
-				System.out.print("ID 입력 : ");
+				System.out.println("===== 동료가 맞는지 확인하겠소 =====");
+				System.out.print("네 이름이 무엇이냐 : ");
 				String id = sc.next();
-				System.out.print("PW 입력 : ");
+				System.out.print("암호를 입력하거라 : ");
 				String pw = sc.next();
 				PlayerDTO pdto = dao.login(id, pw);
 				if (pdto != null) {
-					System.out.println("로그인 성공");
+					System.out.println("떠나보자고!");
 
 					while (true) {
 						System.out.println("======= 장르 선택 =======");
