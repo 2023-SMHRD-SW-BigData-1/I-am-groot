@@ -34,6 +34,13 @@ public class PlayerDTO {
 	
 
 
+	public PlayerDTO(String iD, int pOINT) {
+		super();
+		ID = iD;
+		POINT = pOINT;
+	}
+
+
 	public String getID() {
 		return ID;
 	}
