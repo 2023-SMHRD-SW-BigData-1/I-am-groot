@@ -43,7 +43,7 @@ public class Game_Main {
 
 				System.out.print("네 이름은 무엇이냐 : ");
 				String id = sc.next();
-				System.out.print("암호를 입력하거라 : ");
+				System.out.print("우리끼리의 비밀 암호를 정해보자 : ");
 				String pw = sc.next();
 
 				PlayerDTO pdto = new PlayerDTO(id, pw);
@@ -227,7 +227,7 @@ public class Game_Main {
 					}
 					break;
 				} else {
-					System.out.println("로그인 실패");
+					System.out.println("넌 누구길래 동료인 척 하는거지?");
 				}
 			} else if (input == 3) {
 
