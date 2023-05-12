@@ -11,9 +11,9 @@ public class Game_Main {
 	      
 	      System.out.println("======음악맞추기 게임======");
 	      
-
+	      
 	      while (true) {
-	      System.out.print("[1]회원가입 [2]로그인 [3]전체랭킹보기 [4] 게임시작 >> ");
+	      System.out.print("[1]회원가입 [2]로그인 [3]전체랭킹보기 >> ");
 	      int input = sc.nextInt();
 	      //회원가입
 	      if(input ==1) {
@@ -23,10 +23,8 @@ public class Game_Main {
 	      String id = sc.next();
 	      System.out.print("PW 입력 : ");
 	      String pw = sc.next();
-	      System.out.print("NICKNAME 입력 : ");
-	      String nick = sc.next();
 	      
-	      PlayerDTO pdto = new PlayerDTO(id, pw, nick);
+	      PlayerDTO pdto = new PlayerDTO(id, pw);
 	      int cnt = dao.join(pdto);
 	      
 	      if (cnt > 0) { 
@@ -45,13 +43,16 @@ public class Game_Main {
 	         PlayerDTO pdto = dao.login(id, pw);
 	         if(pdto != null) {
 	            System.out.println("로그인 성공");
+	  	        System.out.println("======= 게임 설명 =======");
+	  	        System.out.println("이 게임은 짧게 나오는 노래를 듣고 제목을 맞추는 노래입니다. 아는 노래라면 정답 란에 답을 입력해보세여!");
+	  	        System.out.println("난이도를 선택하세요");
+	  	        System.out.println("[1]easy [2]hard");
+	  	        System.out.println("====게임 시작=====(아스키아트 넣을거져?)");
+	            
 	         }else {
 	            System.out.println("로그인 실패");
 	         }
-	      } else if(input == 4) {
-	    	  System.out.println("");
-	    	  
-	      }
+	      } 
 	   }
 	      
 

@@ -17,7 +17,7 @@ public class Ex_01 {
 		
 		
 		System.out.println("마신 넘 커엽네여 ㅋ__ㅋ ");
-<<<<<<< HEAD
+//<<<<<<< HEAD
 		
 		System.out.println("b");
 		System.out.println("테스트");
@@ -33,7 +33,7 @@ public class Ex_01 {
 		
 		
 		
-=======
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
+//=======
+//>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 	}
 }

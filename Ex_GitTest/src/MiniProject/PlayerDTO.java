@@ -2,100 +2,10 @@ package MiniProject;
 
 public class PlayerDTO {
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	private String ID;
 	private String PW;
-	private String NICK;
 	private int POINT ; 
 	
 	
@@ -115,15 +25,15 @@ public class PlayerDTO {
 	}
 
 
-	public PlayerDTO(String iD, String pW, String nICK) {
+	public PlayerDTO(String iD, String pW) {
 		super();
 		ID = iD;
 		PW = pW;
-		NICK = nICK;
 		
 	}
 	
-	
+
+
 	public String getID() {
 		return ID;
 	}
@@ -140,13 +50,6 @@ public class PlayerDTO {
 		PW = pW;
 	}
 
-	public String getNICK() {
-		return NICK;
-	}
-
-	public void setNICK(String nICK) {
-		NICK = nICK;
-	}
 
 	
 	
