@@ -1,6 +1,9 @@
 package MiniProject;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+
 
 
 
@@ -9,6 +12,7 @@ public class Game_Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 	      DAO dao = new DAO();
+	      int point = 0;
 	      // 게임시작 전 선택 페이지
 	      
 	  	
@@ -53,7 +57,6 @@ public class Game_Main {
 	      String id = sc.next();
 	      System.out.print("PW 입력 : ");
 	      String pw = sc.next();
-	      int point = 0;
 	      
 	      PlayerDTO pdto = new PlayerDTO(id, pw);
 	      int cnt = dao.join(pdto);
@@ -121,7 +124,16 @@ public class Game_Main {
 	         }else{
 	            System.out.println("로그인 실패");
 	         }
-	      }else if (input == 4) {
+	      }else if(input == 3) {
+	    	  
+	    	
+		    	  System.out.println("==================== 전체 랭킹 ====================");
+		    	  ArrayList<PlayerDTO> List = dao.Ranking();
+		    	  for(int i = 0; i<List.size();i++) {
+						System.out.println(List.get(i).getID() + " / " + List.get(i).getPOINT());
+		    	  }
+	    	  
+		    	  } else if (input == 4) {
 	    	  
 	    	  System.out.println("======= 게임 설명 =======");
 	          System.out.println("이 게임은 짧게 나오는 노래를 듣고 제목을 맞추는 노래입니다. 아는 노래라면 정답 란에 답을 입력해보세여!");
