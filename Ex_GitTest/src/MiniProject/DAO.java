@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
+
+
 public class DAO {
 
 	Connection conn = null;
@@ -65,6 +67,34 @@ public class DAO {
 		}
 
 		return row; 
+
+	}
+
+
+	//포인트 테이블에 아이디 연동
+	
+	public int pointID(PlayerDTO pdt) {
+
+		int low = 0;
+
+		try {
+
+			getConn();
+			String sql = "INSERT INTO POINT_INFO VALUES(?,?)";
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, pdt.getID());
+			psmt.setInt(2, pdt.getPOINT());
+			low = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			getClose();
+		}
+
+		return low; 
 
 	}
 

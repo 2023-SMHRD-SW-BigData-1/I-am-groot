@@ -2,6 +2,8 @@ package MiniProject;
 
 import java.util.Scanner;
 
+
+
 public class Game_Main {
 
 	public static void main(String[] args) {
@@ -51,12 +53,20 @@ public class Game_Main {
 	      String id = sc.next();
 	      System.out.print("PW 입력 : ");
 	      String pw = sc.next();
+	      int point = 0;
 	      
 	      PlayerDTO pdto = new PlayerDTO(id, pw);
 	      int cnt = dao.join(pdto);
 	      
 	      if (cnt > 0) { 
 	         System.out.println("회원가입 성공");
+	         PlayerDTO pdt = new PlayerDTO(id, point);
+	        int  low = dao.pointID(pdt);
+	        if(low > 0) {
+	        	System.out.println("저장완료");
+	        }else {
+	        	System.out.println("저장실패");
+	        }
 	      } else {
 	         System.out.println("회원가입 실패");
 	      }
