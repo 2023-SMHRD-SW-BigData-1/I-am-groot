@@ -11,6 +11,7 @@ public class Game_Main {
 	      
 	      System.out.println("======음악맞추기 게임======");
 	      
+
 	      while (true) {
 	      System.out.print("[1]회원가입 [2]로그인 [3]전체랭킹보기 >> ");
 	      int input = sc.nextInt();
