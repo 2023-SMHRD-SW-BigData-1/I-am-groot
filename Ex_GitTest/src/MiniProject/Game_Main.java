@@ -9,6 +9,9 @@ public class Game_Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 	      DAO dao = new DAO();
+	      int choiceGenre = 0;
+	      int choiceLevel = 0;
+	      
 	      // 게임시작 전 선택 페이지
 	      
 	  	
@@ -41,6 +44,9 @@ public class Game_Main {
 	    	               + "⣿⣿⣿⣿⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀");
 	      
 	      System.out.println();
+
+
+
 	      
 	      while (true) {
 	      System.out.print("[1]회원가입 [2]로그인 [3]전체랭킹보기 [4]게임설명 >> ");
@@ -81,26 +87,50 @@ public class Game_Main {
 	         PlayerDTO pdto = dao.login(id, pw);
 	         if(pdto != null) {
 	            System.out.println("로그인 성공");
+	            while(true) {
 	  	        System.out.println("======= 장르 선택 =======");
 	  	        System.out.println("[1]발라드 [2]댄스 [3]힙합");
-	  	        int choiceGenre = sc.nextInt();
-	
+	  	        choiceGenre = sc.nextInt();
+	  	        
+	  	       
 	  	        if(choiceGenre == 1) {
 	  	        	System.out.println("서서노래하는 아스키아트(예시)");
+	  	        	break;
 	  	        }else if(choiceGenre == 2) {
 	  	        	
 	  	        	System.out.println("춤추는 아스키아트(예시)");
+	  	        	break;
 	  	        }else if(choiceGenre == 3) {
 	  	        	System.out.println("냅다 왕 금목걸이걸고있는 힙합 아스키아트(예시)");
+	  	        	break;
 	  	        }else {
-	  	        	System.out.println("번호를 잘못 입력하셨습니다.");
+	  	        	
+	  	        	System.out.println("번호를 잘못 입력하셨습니다. 장르를 선택해주세요.");
 	  	        	
 	  	        }
+	  	        }
 	  	        
+	            while(true) {
 	  	        System.out.println("======= 난이도 선택 =======");
 	  	        System.out.println("난이도를 선택하세요");
 	  	        System.out.println("[1]easy [2]hard");
-	  	        int choiceLevel = sc.nextInt();
+	  	        choiceLevel = sc.nextInt();
+	  	        
+	  	        if(choiceLevel == 1) {
+	  	        	System.out.println("easy모드가 선택되었습니다.");
+	  	        	break;
+	  	        }
+	  	        else if(choiceGenre == 2) {
+	  	        
+	  	        	System.out.println("hard모드가 선택되었습니다.");
+	  	        	break;
+	  	        }else {
+	  	        
+	  	        	System.out.println("번호를 잘못 입력하셨습니다. 난이도를 선택해주세요.");
+	  	        }
+	  	        
+	  	        
+	            }
 	  	        System.out.println("==== 게임을 시작하려면 아무 키나 입력하세요 =====");
 	  	        String gameStart = sc.next();
 	  	        if(gameStart != null) {
@@ -129,8 +159,11 @@ public class Game_Main {
 	      }
 	      
 	   }
-	      
-
+	     System.out.println("게임이시작되어야합니다요 여기서부터~~!~!"); 
+	     if(choiceLevel ==1) {
+	    	 
+	    	 
+	     }
 	
 	}
 	
