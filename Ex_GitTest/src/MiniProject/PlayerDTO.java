@@ -33,7 +33,7 @@ public class PlayerDTO {
 	}
 	
 
-
+	// POINT_INFO 테이블용
 	public PlayerDTO(String iD, int pOINT) {
 		super();
 		ID = iD;
@@ -56,6 +56,8 @@ public class PlayerDTO {
 	public void setPW(String pW) {
 		PW = pW;
 	}
+	
+	
 
 
 	

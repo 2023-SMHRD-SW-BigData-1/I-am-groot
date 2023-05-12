@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
+
 
 
 
@@ -125,6 +128,36 @@ public class DAO {
 		return pdto;
 
 	}
+	
+	
+	//랭킹조회
+	
+		public ArrayList<PlayerDTO> Ranking(){
+			String sql = "SELECT * FROM POINT_INFO ORDER BY POINT DESC";
+			PlayerDTO md = null;
+			 ArrayList<PlayerDTO> List = new ArrayList<>();
+			 getConn();
+			try {
+				psmt = conn.prepareStatement(sql);
+				rs = psmt.executeQuery(); 
+				while (rs.next()) {
+					String s_id = rs.getString(1);
+					int s_point = rs.getInt(2);
+					md = new PlayerDTO(s_id, s_point);
+					List.add(md);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				getClose();
+			}
+			return List;
+
+		}
+	
+	
+	
 	
 	
 }
