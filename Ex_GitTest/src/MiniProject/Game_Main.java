@@ -214,11 +214,11 @@ public class Game_Main {
 							break;
 						} else {
 
-							System.out.println("번호를 잘못 입력하셨습니다. 난이도를 선택해주세요.");
+							System.out.println("번호를 잘못 입력했잖아. 제대로 선택해보라구!.");
 						}
 
 					}
-					System.out.println("==== 게임을 시작하려면 아무 키나 입력 후 엔터를 눌러주세요 =====");
+					System.out.println("==== 모험을 시작하려면 아무 키나 입력 후 엔터를 눌러주세요 =====");
 					String gameStart = sc.next();
 					if (gameStart != null) {
 
