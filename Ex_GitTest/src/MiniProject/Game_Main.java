@@ -45,14 +45,25 @@ public class Game_Main {
 	            System.out.println("로그인 성공");
 	  	        System.out.println("======= 게임 설명 =======");
 	  	        System.out.println("이 게임은 짧게 나오는 노래를 듣고 제목을 맞추는 노래입니다. 아는 노래라면 정답 란에 답을 입력해보세여!");
+	  	        System.out.println("======= 장르 선택 =======");
+	  	        System.out.println("[1]발라드 [2]댄스 [3]힙합");
+	  	        int choiceGenre = sc.nextInt();
+	  	        System.out.println("======= 난이도 선택 =======");
 	  	        System.out.println("난이도를 선택하세요");
 	  	        System.out.println("[1]easy [2]hard");
-	  	        System.out.println("====게임 시작=====(아스키아트 넣을거져?)");
-	            
-	         }else {
+	  	        int choiceLevel = sc.nextInt();
+	  	        System.out.println("====게임을 시작하려면 아무 키나 입력하세요=====(아스키아트 넣을거져?)");
+	  	        String gameStart = sc.next();
+	  	        if(gameStart != null) {
+	  	        	
+	  	        	System.out.println("GAME START");
+	  	        }
+	            break;
+	         }else{
 	            System.out.println("로그인 실패");
 	         }
 	      } 
+	      
 	   }
 	      
 
