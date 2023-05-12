@@ -13,7 +13,7 @@ public class Game_Main {
 	      
 
 	      while (true) {
-	      System.out.print("[1]회원가입 [2]로그인 [3]전체랭킹보기 >> ");
+	      System.out.print("[1]회원가입 [2]로그인 [3]전체랭킹보기 [4] 게임시작 >> ");
 	      int input = sc.nextInt();
 	      //회원가입
 	      if(input ==1) {
@@ -48,6 +48,9 @@ public class Game_Main {
 	         }else {
 	            System.out.println("로그인 실패");
 	         }
+	      } else if(input == 4) {
+	    	  System.out.println("");
+	    	  
 	      }
 	   }
 	      
