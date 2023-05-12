@@ -214,11 +214,11 @@ public class Game_Main {
 							break;
 						} else {
 
-							System.out.println("번호를 잘못 입력했잖아. 제대로 선택해보라구!.");
+							System.out.println("번호를 잘못 입력하셨습니다. 난이도를 선택해주세요.");
 						}
 
 					}
-					System.out.println("==== 모험을 시작하려면 아무 키나 입력 후 엔터를 눌러주세요 =====");
+					System.out.println("==== 게임을 시작하려면 아무 키나 입력 후 엔터를 눌러주세요 =====");
 					String gameStart = sc.next();
 					if (gameStart != null) {
 
@@ -231,9 +231,49 @@ public class Game_Main {
 								+ "(__)     \\______| /__/     \\__\\ |__|  |__| |_______|   |_______/        |__|     /__/     \\__\\ | _| `._____|    |__|        (__) \r\n"
 								+ "                                                                                                                                 \r\n"
 								+ "");
+						
+						for(int i = 1; i <4 ; i++) {
+						
+						if (choiceGenre == i && choiceLevel == 1) {
+							
+							System.out.println("노래를 듣고 제목을 입력해주세요");
+							String userAnswer = sc.next();
+							System.out.println("다시 들어보려면 R을 입력하세요");
+							String replay = sc.next();
+							
+						} else if (choiceGenre == i && choiceLevel == 2) {
 
+							System.out.println("노래를 듣고 제목을 입력해주세요");
+							String userAnswer = sc.next();
+							System.out.println("다시 들어보려면 R을 입력하세요");
+							String replay = sc.next();
+						}
+
+//						} else if (choiceGenre == 2 && choiceLevel == 1) {
+//							System.out.println("노래를 듣고 제목을 입력해주세요");
+//							String userAnswer = sc.next();
+//							System.out.println("다시 들어보려면 R을 입력하세요");
+//							String replay = sc.next();
+//
+//						} else if (choiceGenre == 2 && choiceLevel == 2) {
+//							System.out.println("노래를 듣고 제목을 입력해주세요");
+//							String userAnswer = sc.next();
+//							System.out.println("다시 들어보려면 R을 입력하세요");
+//							String replay = sc.next();
+//
+//						} else if (choiceGenre == 3 && choiceLevel == 1) {
+//							System.out.println("노래를 듣고 제목을 입력해주세요");
+//							String userAnswer = sc.next();
+//							System.out.println("다시 들어보려면 R을 입력하세요");
+//							String replay = sc.next();
+//							
+//						} else if (choiceGenre == 3 && choiceLevel == 2) {
+//							System.out.println("노래를 듣고 제목을 입력해주세요");
+//							String userAnswer = sc.next();
+//							System.out.println("다시 들어보려면 R을 입력하세요");
+//							String replay = sc.next();
+//						}
 					}
-					break;
 				} else {
 					System.out.println("넌 누구길래 동료인 척 하는거지?");
 				}
@@ -282,4 +322,4 @@ public class Game_Main {
 		}
 	}
 
-}
+}}
