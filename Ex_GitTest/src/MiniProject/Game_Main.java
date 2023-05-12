@@ -201,6 +201,8 @@ public class Game_Main {
 							System.out.println("1.노래는 게임 시작 후 바로 재생됩니다.");
 							System.out.println("2.답은 띄어쓰기 없이 작성해주세요.");
 							System.out.println("3.답에 영어가 들어가 있다면 모두 한국어 발음으로 변경하여 작성해주세요.");
+							System.out.println("4.노래 재생버튼을 누르면 다시 듣기가 가능합니다.");
+							System.out.println("5.도저히 모르겠다면 p를 입력해주세요! 다음 문제로 넘어갑니다.");
 							System.out.println("게임을 즐겨주세요 !~");
 							break;
 						} else {
@@ -240,30 +242,35 @@ public class Game_Main {
 			} else if (input == 4) {
 
 				System.out.println("======= 게임 설명 =======");
-				System.out.println("이 게임은 짧게 나오는 노래를 듣고 제목을 맞추는 노래입니다. 아는 노래라면 정답 란에 답을 입력해보세여!");
+				System.out.println("짧게 나오는 노래를 듣고 제목을 맞추는 게임입니다. 아는 노래라면 정답 란에 답을 입력해보세여!");
 			}
 
 		}
-		System.out.println("게임이시작되어야합니다요 여기서부터~~!~!");
 		if (choiceGenre == 1 && choiceLevel == 1) {
 
 			System.out.println("발라드 easy모드");
+			String userAnswer = sc.next();
+			
 
 		} else if (choiceGenre == 1 && choiceLevel == 2) {
 
 			System.out.println("발라드 hard모드");
+			String userAnswer = sc.next();
 		} else if (choiceGenre == 2 && choiceLevel == 1) {
 			System.out.println("댄스 easy모드");
+			String userAnswer = sc.next();
 
 		} else if (choiceGenre == 2 && choiceLevel == 2) {
 			System.out.println("댄스 hard모드");
+			String userAnswer = sc.next();
 
 		} else if (choiceGenre == 3 && choiceLevel == 1) {
-
 			System.out.println("힙합 easy모드");
+			String userAnswer = sc.next();
 		} else if (choiceGenre == 3 && choiceLevel == 2) {
 
 			System.out.println("힙합 hard모드");
+			String userAnswer = sc.next();
 		}
 
 	}
