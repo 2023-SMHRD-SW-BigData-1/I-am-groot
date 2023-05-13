@@ -2,15 +2,31 @@ package MiniProject;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
+
+import javazoom.jl.player.MP3Player;
 
 public class Game_Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		Random rd = new Random();
 		DAO dao = new DAO();
 		int choiceGenre = 0;
 		int choiceLevel = 0;
-
+		Music m = new Music();
+		MP3Player mp3 = new MP3Player();
+		int[] ran = new int[10];
+		 for(int a = 0; a < 10 ;a++) {
+				ran[a] = rd.nextInt(10);
+				
+				for(int j = 0; j < a;j++) {
+					if (ran[a] == ran[j]) {
+						a -= 1;
+					}
+				}
+			}
+		
 		int point = 0;
 		// 게임시작 전 선택 페이지
 
@@ -218,7 +234,7 @@ public class Game_Main {
 						}
 
 					}
-					System.out.println("==== 게임을 시작하려면 아무 키나 입력 후 엔터를 눌러주세요 =====");
+					System.out.println("===== 게임을 시작하려면 아무 키나 입력 후 엔터를 눌러주세요 =====");
 					String gameStart = sc.next();
 					if (gameStart != null) {
 
@@ -235,49 +251,135 @@ public class Game_Main {
 						for(int i = 1; i <4 ; i++) {
 						
 						if (choiceGenre == i && choiceLevel == 1) {
-							
-							System.out.println("노래를 듣고 제목을 입력해주세요");
+							for(int a = 0; a < 3; a++) {
+								System.out.println("노래를 듣고 제목을 입력해주세요");
+								System.out.println("재생은 1번 입니다.");
+							int star = sc.nextInt();
+							if(star == 1) {
+							for(int j = 0; j < 3; j++) {
+							mp3.play(dao.Easy_Ballad(ran[j]));
+							System.out.println(dao.Easy_Ballad(ran[j]));
+								
+							System.out.print("정답을 입력해 주세요 : ");
 							String userAnswer = sc.next();
+							
 							System.out.println("다시 들어보려면 R을 입력하세요");
 							String replay = sc.next();
-							
+							}
+							}else {
+								System.out.println("게임 그만하고 싶나요??");
+							}
+							}
 						} else if (choiceGenre == i && choiceLevel == 2) {
-
-							System.out.println("노래를 듣고 제목을 입력해주세요");
+							for(int a = 0; a < 3; a++) {
+								System.out.println("노래를 듣고 제목을 입력해주세요");
+								System.out.println("재생은 1번 입니다.");
+							int star = sc.nextInt();
+							if(star == 1) {
+							for(int j = 0; j < 3; j++) {
+							mp3.play(dao.Hard_Ballad(ran[j]));
+							System.out.println(dao.Hard_Ballad(ran[j]));
+								
+							System.out.print("정답을 입력해 주세요 : ");
 							String userAnswer = sc.next();
+							
 							System.out.println("다시 들어보려면 R을 입력하세요");
 							String replay = sc.next();
+							}
+							}else {
+								System.out.println("게임 그만하고 싶나요??");
+							}
 						}
 
-//						} else if (choiceGenre == 2 && choiceLevel == 1) {
-//							System.out.println("노래를 듣고 제목을 입력해주세요");
-//							String userAnswer = sc.next();
-//							System.out.println("다시 들어보려면 R을 입력하세요");
-//							String replay = sc.next();
-//
-//						} else if (choiceGenre == 2 && choiceLevel == 2) {
-//							System.out.println("노래를 듣고 제목을 입력해주세요");
-//							String userAnswer = sc.next();
-//							System.out.println("다시 들어보려면 R을 입력하세요");
-//							String replay = sc.next();
-//
-//						} else if (choiceGenre == 3 && choiceLevel == 1) {
-//							System.out.println("노래를 듣고 제목을 입력해주세요");
-//							String userAnswer = sc.next();
-//							System.out.println("다시 들어보려면 R을 입력하세요");
-//							String replay = sc.next();
-//							
-//						} else if (choiceGenre == 3 && choiceLevel == 2) {
-//							System.out.println("노래를 듣고 제목을 입력해주세요");
-//							String userAnswer = sc.next();
-//							System.out.println("다시 들어보려면 R을 입력하세요");
-//							String replay = sc.next();
-//						}
+						}else if (choiceGenre == 2 && choiceLevel == 1) {
+							for(int a = 0; a < 3; a++) {
+								System.out.println("노래를 듣고 제목을 입력해주세요");
+								System.out.println("재생은 1번 입니다.");
+							int star = sc.nextInt();
+							if(star == 1) {
+							for(int j = 0; j < 3; j++) {
+							mp3.play(dao.Easy_Dance(ran[j]));
+							System.out.println(dao.Easy_Dance(ran[j]));
+								
+							System.out.print("정답을 입력해 주세요 : ");
+							String userAnswer = sc.next();
+							
+							System.out.println("다시 들어보려면 R을 입력하세요");
+							String replay = sc.next();
+							}
+							}else {
+								System.out.println("게임 그만하고 싶나요??");
+							}
+						} 
+						}else if (choiceGenre == 2 && choiceLevel == 2) {
+							for(int a = 0; a < 3; a++) {
+								System.out.println("노래를 듣고 제목을 입력해주세요");
+								System.out.println("재생은 1번 입니다.");
+							int star = sc.nextInt();
+							if(star == 1) {
+							for(int j = 0; j < 3; j++) {
+							mp3.play(dao.Hard_Dance(ran[j]));
+							System.out.println(dao.Hard_Dance(ran[j]));
+								
+							System.out.print("정답을 입력해 주세요 : ");
+							String userAnswer = sc.next();
+							
+							System.out.println("다시 들어보려면 R을 입력하세요");
+							String replay = sc.next();
+							}
+							}else {
+								System.out.println("게임 그만하고 싶나요??");
+							}
+						} 
+						}else if (choiceGenre == 3 && choiceLevel == 1) {
+
+							for(int a = 0; a < 3; a++) {
+								System.out.println("노래를 듣고 제목을 입력해주세요");
+								System.out.println("재생은 1번 입니다.");
+							int star = sc.nextInt();
+							if(star == 1) {
+							for(int j = 0; j < 3; j++) {
+							mp3.play(dao.Easy_Hiphop(ran[j]));
+							System.out.println(dao.Easy_Hiphop(ran[j]));
+								
+							System.out.print("정답을 입력해 주세요 : ");
+							String userAnswer = sc.next();
+							
+							System.out.println("다시 들어보려면 R을 입력하세요");
+							String replay = sc.next();
+							}
+							}else {
+								System.out.println("게임 그만하고 싶나요??");
+							}
+						} 
+						}else if (choiceGenre == 3 && choiceLevel == 2) {
+							for(int a = 0; a < 3; a++) {
+								System.out.println("노래를 듣고 제목을 입력해주세요");
+								System.out.println("재생은 1번 입니다.");
+							int star = sc.nextInt();
+							if(star == 1) {
+							for(int j = 0; j < 3; j++) {
+							mp3.play(dao.Hard_Hiphop(ran[j]));
+							System.out.println(dao.Hard_Hiphop(ran[j]));
+								
+							System.out.print("정답을 입력해 주세요 : ");
+							String userAnswer = sc.next();
+							
+							System.out.println("다시 들어보려면 R을 입력하세요");
+							String replay = sc.next();
+							}
+							}else {
+								System.out.println("게임 그만하고 싶나요??");
+							}
+						}
 					}
-				} else {
+				} 
+					}else {
 					System.out.println("넌 누구길래 동료인 척 하는거지?");
 				}
-			} else if (input == 3) {
+			} 
+			
+			}else if (input == 3) {
 
 				System.out.println("==================== 전체 랭킹 ====================");
 				ArrayList<PlayerDTO> List = dao.Ranking();
@@ -292,34 +394,34 @@ public class Game_Main {
 			}
 
 		}
-		if (choiceGenre == 1 && choiceLevel == 1) {
-
-			System.out.println("발라드 easy모드");
-			String userAnswer = sc.next();
-			
-			
-		} else if (choiceGenre == 1 && choiceLevel == 2) {
-
-			System.out.println("발라드 hard모드");
-			String userAnswer = sc.next();
-
-		} else if (choiceGenre == 2 && choiceLevel == 1) {
-			System.out.println("댄스 easy모드");
-			String userAnswer = sc.next();
-
-		} else if (choiceGenre == 2 && choiceLevel == 2) {
-			System.out.println("댄스 hard모드");
-			String userAnswer = sc.next();
-
-		} else if (choiceGenre == 3 && choiceLevel == 1) {
-			System.out.println("힙합 easy모드");
-			String userAnswer = sc.next();
-		} else if (choiceGenre == 3 && choiceLevel == 2) {
-
-			System.out.println("힙합 hard모드");
-			String userAnswer = sc.next();
-		}
+//		if (choiceGenre == 1 && choiceLevel == 1) {
+//
+//			System.out.println("발라드 easy모드");
+//			String userAnswer = sc.next();
+//			
+//			
+//		} else if (choiceGenre == 1 && choiceLevel == 2) {
+//
+//			System.out.println("발라드 hard모드");
+//			String userAnswer = sc.next();
+//
+//		} else if (choiceGenre == 2 && choiceLevel == 1) {
+//			System.out.println("댄스 easy모드");
+//			String userAnswer = sc.next();
+//
+//		} else if (choiceGenre == 2 && choiceLevel == 2) {
+//			System.out.println("댄스 hard모드");
+//			String userAnswer = sc.next();
+//
+//		} else if (choiceGenre == 3 && choiceLevel == 1) {
+//			System.out.println("힙합 easy모드");
+//			String userAnswer = sc.next();
+//		} else if (choiceGenre == 3 && choiceLevel == 2) {
+//
+//			System.out.println("힙합 hard모드");
+//			String userAnswer = sc.next();
+//		}
 		}
 	}
 
-}}
+}

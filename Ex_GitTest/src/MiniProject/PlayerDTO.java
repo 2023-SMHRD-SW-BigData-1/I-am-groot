@@ -8,7 +8,52 @@ public class PlayerDTO {
 	private String PW;
 	private int POINT ; 
 	
+	private String path_url;
+	private String path;
+	private String title;
+	private String spell;
 	
+	
+	public String getPath_url() {
+		return path_url;
+	}
+
+
+	public void setPath_url(String path_url) {
+		this.path_url = path_url;
+	}
+
+
+	public String getPath() {
+		return path;
+	}
+
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+
+	public String getTitle() {
+		return title;
+	}
+
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+
+	public String getSpell() {
+		return spell;
+	}
+
+
+	public void setSpell(String spell) {
+		this.spell = spell;
+	}
+
+
 	public int getPOINT() {
 		return POINT;
 	}
@@ -19,10 +64,10 @@ public class PlayerDTO {
 	}
 
 
-	public PlayerDTO(int pOINT) {
-		super();
-		POINT = pOINT;
-	}
+//	public PlayerDTO(String string) {
+//		super();
+//		POINT = string;
+//	}
 
 
 	public PlayerDTO(String iD, String pW) {
@@ -56,7 +101,29 @@ public class PlayerDTO {
 	public void setPW(String pW) {
 		PW = pW;
 	}
+
+
 	
+	// 노래를 받아와서 배열에 넣어주는용
+	public PlayerDTO(String title) {
+		super();
+		this.title = title;
+	
+		
+	}
+
+
+	public PlayerDTO(String path, String title, String spell) {
+		super();
+		
+		this.path = path;
+		this.title = title;
+		this.spell = spell;
+	}
+
+
+	
+
 	
 
 

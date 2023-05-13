@@ -9,13 +9,19 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class DAO {
+import javazoom.jl.player.MP3Player;
 
+public class DAO {
+	
+	
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
-
+	Random rd = new Random();
 	
+	 
+			
+	 
 	public void getConn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -207,9 +213,214 @@ public class DAO {
          
 
          return point;
-      }
-   
-      
-   
-}
+	}
+	
+	
+	//중복제거
+	
+	
+	
+	
+	
+//	 jdbc에서 노래 목록 배열에 넣기
+	public String Easy_Ballad(int h ){
+		String hs = null;
+		
+		ArrayList<PlayerDTO> Easy_Ballad = new ArrayList<>();
+		String sql = "SELECT * FROM EASY_BALLAD";
+		String conPath = "C:\\Users\\smhrd\\Desktop\\Sing\\발라드7초\\";
+		PlayerDTO md = null;
+		
+		 getConn();
+		
+		 try {
+				psmt = conn.prepareStatement(sql);
+				rs = psmt.executeQuery(); 
+				while (rs.next()) {
+					String s_path = rs.getString(1);
+					String s_title = rs.getString(2);
+					String s_spell = rs.getString(3);
+					md = new PlayerDTO(s_path, s_title, s_spell);
+					Easy_Ballad.add(md);
+				}
+				
+				hs = conPath+ Easy_Ballad.get(h).getPath();
+				
+		 } catch ( Exception e) {
+				e.printStackTrace();
+			} finally {
+				getClose();
+			}
+			return hs;
 
+		}
+
+	
+	
+	public String Hard_Ballad(int h ){
+		String hs = null;
+		
+		ArrayList<PlayerDTO> Hard_Ballad = new ArrayList<>();
+		String sql = "SELECT * FROM Hard_Ballad";
+		String conPath = "C:\\Users\\smhrd\\Desktop\\Sing\\발라드3초\\";
+		PlayerDTO md = null;
+		
+		getConn();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery(); 
+			while (rs.next()) {
+				String s_path = rs.getString(1);
+				String s_title = rs.getString(2);
+				String s_spell = rs.getString(3);
+				md = new PlayerDTO(s_path, s_title, s_spell);
+				Hard_Ballad.add(md);
+			}
+			
+			hs = conPath+ Hard_Ballad.get(h).getPath();
+			
+		} catch ( Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return hs;
+		
+	}
+	
+	
+	public String Easy_Dance(int h ){
+		String hs = null;
+		
+		ArrayList<PlayerDTO> Easy_Dance = new ArrayList<>();
+		String sql = "SELECT * FROM Easy_Dance";
+		String conPath = "C:\\Users\\smhrd\\Desktop\\Sing\\댄스7초\\";
+		PlayerDTO md = null;
+		
+		getConn();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery(); 
+			while (rs.next()) {
+				String s_path = rs.getString(1);
+				String s_title = rs.getString(2);
+				String s_spell = rs.getString(3);
+				md = new PlayerDTO(s_path, s_title, s_spell);
+				Easy_Dance.add(md);
+			}
+			
+			hs = conPath+ Easy_Dance.get(h).getPath();
+			
+		} catch ( Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return hs;
+		
+	}
+	
+	
+	public String Hard_Dance(int h ){
+		String hs = null;
+		
+		ArrayList<PlayerDTO> Hard_Dance = new ArrayList<>();
+		String sql = "SELECT * FROM Hard_Dance";
+		String conPath = "C:\\Users\\smhrd\\Desktop\\Sing\\댄스3초\\";
+		PlayerDTO md = null;
+		
+		getConn();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery(); 
+			while (rs.next()) {
+				String s_path = rs.getString(1);
+				String s_title = rs.getString(2);
+				String s_spell = rs.getString(3);
+				md = new PlayerDTO(s_path, s_title, s_spell);
+				Hard_Dance.add(md);
+			}
+			
+			hs = conPath+ Hard_Dance.get(h).getPath();
+			
+		} catch ( Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return hs;
+		
+	}
+	
+	
+	public String Easy_Hiphop(int h ){
+		String hs = null;
+		
+		ArrayList<PlayerDTO> Easy_Hiphop = new ArrayList<>();
+		String sql = "SELECT * FROM Easy_Hiphop";
+		String conPath = "C:\\Users\\smhrd\\Desktop\\Sing\\힙합7초\\";
+		PlayerDTO md = null;
+		
+		getConn();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery(); 
+			while (rs.next()) {
+				String s_path = rs.getString(1);
+				String s_title = rs.getString(2);
+				String s_spell = rs.getString(3);
+				md = new PlayerDTO(s_path, s_title, s_spell);
+				Easy_Hiphop.add(md);
+			}
+			
+			hs = conPath+ Easy_Hiphop.get(h).getPath();
+			
+		} catch ( Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return hs;
+		
+	}
+	
+	
+	public String Hard_Hiphop(int h ){
+		String hs = null;
+		
+		ArrayList<PlayerDTO> Hard_Hiphop = new ArrayList<>();
+		String sql = "SELECT * FROM Hard_Hiphop";
+		String conPath = "C:\\Users\\smhrd\\Desktop\\Sing\\힙합3초\\";
+		PlayerDTO md = null;
+		
+		getConn();
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery(); 
+			while (rs.next()) {
+				String s_path = rs.getString(1);
+				String s_title = rs.getString(2);
+				String s_spell = rs.getString(3);
+				md = new PlayerDTO(s_path, s_title, s_spell);
+				Hard_Hiphop.add(md);
+			}
+			
+			hs = conPath+ Hard_Hiphop.get(h).getPath();
+			
+		} catch ( Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return hs;
+		
+	}
+	
+	
+	
+}
