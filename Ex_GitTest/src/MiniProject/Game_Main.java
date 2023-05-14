@@ -28,6 +28,8 @@ public class Game_Main {
 			}
 		
 		int point = 0;
+		int hintCount = 1;
+		
 		// 게임시작 전 선택 페이지
 
 		System.out.println(
@@ -248,132 +250,1281 @@ public class Game_Main {
 								+ "                                                                                                                                 \r\n"
 								+ "");
 						
-						for(int i = 1; i <4 ; i++) {
 						
-						if (choiceGenre == i && choiceLevel == 1) {
-							for(int a = 0; a < 3; a++) {
+						// Easy_Ballad 문제 시작 ==============================================================================================
+						if (choiceGenre == 1 && choiceLevel == 1) {
+								for(int j = 0; j < 3; j++) {
 								System.out.println("노래를 듣고 제목을 입력해주세요");
 								System.out.println("재생은 1번 입니다.");
+								
 							int star = sc.nextInt();
+							System.out.println();
+							System.out.println();
+							System.out.println();
 							if(star == 1) {
-							for(int j = 0; j < 3; j++) {
 							mp3.play(dao.Easy_Ballad(ran[j]));
-							System.out.println(dao.Easy_Ballad(ran[j]));
-								
+							System.out.println("\r\n"
+									+ "########  ##          ###    ##    ##     ######   #######  ##    ##  ######   \r\n"
+									+ "##     ## ##         ## ##    ##  ##     ##    ## ##     ## ###   ## ##    ##  \r\n"
+									+ "##     ## ##        ##   ##    ####      ##       ##     ## ####  ## ##        \r\n"
+									+ "########  ##       ##     ##    ##        ######  ##     ## ## ## ## ##   #### \r\n"
+									+ "##        ##       #########    ##             ## ##     ## ##  #### ##    ##  \r\n"
+									+ "##        ##       ##     ##    ##       ##    ## ##     ## ##   ### ##    ##  \r\n"
+									+ "##        ######## ##     ##    ##        ######   #######  ##    ##  ######   \r\n"
+									+ "");	
 							System.out.print("정답을 입력해 주세요 : ");
 							String userAnswer = sc.next();
-							
-							System.out.println("다시 들어보려면 R을 입력하세요");
-							String replay = sc.next();
-							}
+							if (userAnswer.equals(dao.Easy_Ballad.get(ran[j]).getTitle())) {
+								System.out.println("정답입니다!!");
+								System.out.println();
+								point += 30;
 							}else {
+								System.out.println("틀렸습니다..");
+								
+								System.out.println("힌트의 요정 : 힌트를 사용하고 싶으면 키보드로 hint를 눌러봐! 다른버튼을 누르면 패스!");
+								String hi = sc.next();
+								if (hi.equals("hint") && hintCount > 0) {
+									hintCount -= 1;
+									System.out.println(":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
+											+ ":+:    :+:     :+:     :+:+:   :+:     :+:      \r\n"
+											+ "+:+    +:+     +:+     :+:+:+  +:+     +:+      \r\n"
+											+ "+#++:++#++     +#+     +#+ +:+ +#+     +#+      \r\n"
+											+ "+#+    +#+     +#+     +#+  +#+#+#     +#+      \r\n"
+											+ "#+#    #+#     #+#     #+#   #+#+#     #+#      \r\n"
+											+ "###    ### ########### ###    ####     ###  ");
+									
+									System.out.println();
+									System.out.println();
+									System.out.println( "초성힌트 : " + dao.Easy_Ballad.get(ran[j]).getSpell());
+									System.out.println("정달을 입력해주세요 :  ");
+									String hint_an =sc.next();
+									if(hint_an.equals(dao.Easy_Ballad.get(ran[j]).getTitle())) {
+										System.out.println();
+										System.out.println("정답입니다!! ");
+										point += 30;
+									}else {
+										System.out.println("힌트의 요정 : 힌트는 한번밖에 없는데 그거를 틀리다니.. 유감이야.. ");
+										System.out.println("\r\n"
+												+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+												+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+												+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+												+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+												+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+												+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+												+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+												+ "");
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									}
+									
+								
+							}else if(hi.equals("hint") && hintCount == 0) {
+								System.out.println("힌트의 요정 : 남아있는 힌트가 없어...");
+								System.out.println();
+								System.out.println();
+								point -= 15;
+							}else {
+								if(j < 3) {
+								System.out.println("\r\n"
+										+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+										+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+										+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+										+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+										+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+										+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+										+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+										+ "");
+								
+								point -= 15;
+								}
+								else {
+									point -= 15;
+								}
+							}
+							}
+							}
+								else {
 								System.out.println("게임 그만하고 싶나요??");
 							}
 							}
-						} else if (choiceGenre == i && choiceLevel == 2) {
-							for(int a = 0; a < 3; a++) {
+								//3문제 끝나고 보너스 스테이지
+							dao.bonus(point);
+							
+							//다시 3문제 시작 ============================================================================================
+							for(int j = 4; j < 6; j++) {
 								System.out.println("노래를 듣고 제목을 입력해주세요");
 								System.out.println("재생은 1번 입니다.");
+								
 							int star = sc.nextInt();
+							System.out.println();
+							System.out.println();
+							System.out.println();
 							if(star == 1) {
+							mp3.play(dao.Easy_Ballad(ran[j]));
+							System.out.println("\r\n"
+									+ "########  ##          ###    ##    ##     ######   #######  ##    ##  ######   \r\n"
+									+ "##     ## ##         ## ##    ##  ##     ##    ## ##     ## ###   ## ##    ##  \r\n"
+									+ "##     ## ##        ##   ##    ####      ##       ##     ## ####  ## ##        \r\n"
+									+ "########  ##       ##     ##    ##        ######  ##     ## ## ## ## ##   #### \r\n"
+									+ "##        ##       #########    ##             ## ##     ## ##  #### ##    ##  \r\n"
+									+ "##        ##       ##     ##    ##       ##    ## ##     ## ##   ### ##    ##  \r\n"
+									+ "##        ######## ##     ##    ##        ######   #######  ##    ##  ######   \r\n"
+									+ "");
+							System.out.print("정답을 입력해 주세요 : ");
+							String userAnswer = sc.next();
+							if (userAnswer.equals(dao.Easy_Ballad.get(ran[j]).getTitle())) {
+								System.out.println("정답입니다!!");
+								System.out.println();
+								point += 30;
+							}else {
+								System.out.println("틀렸습니다..");
+								
+								System.out.println("힌트의 요정 : 힌트를 사용하고 싶으면 키보드로 hint를 눌러봐! 다른버튼을 누르면 패스!");
+								String hi = sc.next();
+								if (hi.equals("hint") && hintCount > 0) {
+									hintCount -= 1;
+									System.out.println(":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
+											+ ":+:    :+:     :+:     :+:+:   :+:     :+:      \r\n"
+											+ "+:+    +:+     +:+     :+:+:+  +:+     +:+      \r\n"
+											+ "+#++:++#++     +#+     +#+ +:+ +#+     +#+      \r\n"
+											+ "+#+    +#+     +#+     +#+  +#+#+#     +#+      \r\n"
+											+ "#+#    #+#     #+#     #+#   #+#+#     #+#      \r\n"
+											+ "###    ### ########### ###    ####     ###  ");
+									
+									System.out.println();
+									System.out.println();
+									System.out.println( "초성힌트 : " + dao.Easy_Ballad.get(ran[j]).getSpell());
+									System.out.println("정달을 입력해주세요 :  ");
+									String hint_an =sc.next();
+									if(hint_an.equals(dao.Easy_Ballad.get(ran[j]).getTitle())) {
+										System.out.println();
+										System.out.println("정답입니다!! ");
+										point += 30;
+									}else {
+										System.out.println("힌트의 요정 : 힌트는 한번밖에 없는데 그거를 틀리다니.. 유감이야.. ");
+										System.out.println("\r\n"
+												+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+												+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+												+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+												+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+												+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+												+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+												+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+												+ "");
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									}
+									
+								
+							}else if(hi.equals("hint") && hintCount == 0) {
+								System.out.println("힌트의 요정 : 남아있는 힌트가 없어...");
+								System.out.println();
+								System.out.println();
+								point -= 15;
+							}else {
+								if(j < 3) {
+								System.out.println("\r\n"
+										+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+										+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+										+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+										+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+										+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+										+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+										+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+										+ "");
+								
+								point -= 15;
+								}
+								else {
+									point -= 15;
+								}
+							}
+							}
+							}
+								else {
+								System.out.println("게임 그만하고 싶나요??");
+							}
+							}
+							
+							System.out.println(" ::::::::      :::     ::::    ::::  ::::::::::   ::::::::  :::     ::: :::::::::: :::::::::  \r\n"
+									+ ":+:    :+:   :+: :+:   +:+:+: :+:+:+ :+:         :+:    :+: :+:     :+: :+:        :+:    :+: \r\n"
+									+ "+:+         +:+   +:+  +:+ +:+:+ +:+ +:+         +:+    +:+ +:+     +:+ +:+        +:+    +:+ \r\n"
+									+ ":#:        +#++:++#++: +#+  +:+  +#+ +#++:++#    +#+    +:+ +#+     +:+ +#++:++#   +#++:++#:  \r\n"
+									+ "+#+   +#+# +#+     +#+ +#+       +#+ +#+         +#+    +#+  +#+   +#+  +#+        +#+    +#+ \r\n"
+									+ "#+#    #+# #+#     #+# #+#       #+# #+#         #+#    #+#   #+#+#+#   #+#        #+#    #+# \r\n"
+									+ " ########  ###     ### ###       ### ##########   ########      ###     ########## ###    ### ");
+
+							System.out.println("동료를 모으는 게임이 끝났습니다.");
+							System.out.println("당신의 점수는 : " + point + "입니다.");
+							
+							
+							System.out.println();
+							dao.End(id, point);
+							break;
+							// Hard_Ballad ================================================================================================
+						} else if (choiceGenre == 1 && choiceLevel == 2) {
 							for(int j = 0; j < 3; j++) {
+								System.out.println("노래를 듣고 제목을 입력해주세요");
+								System.out.println("재생은 1번 입니다.");
+								
+							int star = sc.nextInt();
+							System.out.println();
+							System.out.println();
+							System.out.println();
+							if(star == 1) {
 							mp3.play(dao.Hard_Ballad(ran[j]));
-							System.out.println(dao.Hard_Ballad(ran[j]));
-								
+							System.out.println("\r\n"
+									+ "########  ##          ###    ##    ##     ######   #######  ##    ##  ######   \r\n"
+									+ "##     ## ##         ## ##    ##  ##     ##    ## ##     ## ###   ## ##    ##  \r\n"
+									+ "##     ## ##        ##   ##    ####      ##       ##     ## ####  ## ##        \r\n"
+									+ "########  ##       ##     ##    ##        ######  ##     ## ## ## ## ##   #### \r\n"
+									+ "##        ##       #########    ##             ## ##     ## ##  #### ##    ##  \r\n"
+									+ "##        ##       ##     ##    ##       ##    ## ##     ## ##   ### ##    ##  \r\n"
+									+ "##        ######## ##     ##    ##        ######   #######  ##    ##  ######   \r\n"
+									+ "");	
 							System.out.print("정답을 입력해 주세요 : ");
 							String userAnswer = sc.next();
-							
-							System.out.println("다시 들어보려면 R을 입력하세요");
-							String replay = sc.next();
-							}
+							if (userAnswer.equals(dao.Hard_Ballad.get(ran[j]).getTitle())) {
+								System.out.println("정답입니다!!");
+								System.out.println();
+								point += 60;
 							}else {
+								System.out.println("틀렸습니다..");
+								
+								System.out.println("힌트의 요정 : 힌트를 사용하고 싶으면 키보드로 hint를 눌러봐! 다른버튼을 누르면 패스!");
+								String hi = sc.next();
+								if (hi.equals("hint") && hintCount > 0) {
+									hintCount -= 1;
+									System.out.println(":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
+											+ ":+:    :+:     :+:     :+:+:   :+:     :+:      \r\n"
+											+ "+:+    +:+     +:+     :+:+:+  +:+     +:+      \r\n"
+											+ "+#++:++#++     +#+     +#+ +:+ +#+     +#+      \r\n"
+											+ "+#+    +#+     +#+     +#+  +#+#+#     +#+      \r\n"
+											+ "#+#    #+#     #+#     #+#   #+#+#     #+#      \r\n"
+											+ "###    ### ########### ###    ####     ###  ");
+									
+									System.out.println();
+									System.out.println();
+									System.out.println( "초성힌트 : " + dao.Hard_Ballad.get(ran[j]).getSpell());
+									System.out.println("정달을 입력해주세요 :  ");
+									String hint_an =sc.next();
+									if(hint_an.equals(dao.Hard_Ballad.get(ran[j]).getTitle())) {
+										System.out.println();
+										System.out.println("정답입니다!! ");
+										point += 60;
+									}else {
+										System.out.println("힌트의 요정 : 힌트는 한번밖에 없는데 그거를 틀리다니.. 유감이야.. ");
+										System.out.println("\r\n"
+												+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+												+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+												+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+												+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+												+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+												+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+												+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+												+ "");
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									}
+									
+								
+							}else if(hi.equals("hint") && hintCount == 0) {
+								System.out.println("힌트의 요정 : 남아있는 힌트가 없어...");
+								System.out.println();
+								System.out.println();
+								point -= 30;
+							}else {
+								if(j < 3) {
+								System.out.println("\r\n"
+										+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+										+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+										+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+										+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+										+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+										+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+										+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+										+ "");
+								
+								point -= 30;
+								}
+								else {
+									point -= 30;
+								}
+							}
+							}
+							}
+								else {
 								System.out.println("게임 그만하고 싶나요??");
 							}
-						}
-
-						}else if (choiceGenre == 2 && choiceLevel == 1) {
-							for(int a = 0; a < 3; a++) {
+							}
+								//3문제 끝나고 보너스 스테이지
+							dao.bonus(point);
+							
+							//다시 3문제 시작 ============================================================================================
+							for(int j = 4; j < 6; j++) {
 								System.out.println("노래를 듣고 제목을 입력해주세요");
 								System.out.println("재생은 1번 입니다.");
+								
 							int star = sc.nextInt();
+							System.out.println();
+							System.out.println();
+							System.out.println();
 							if(star == 1) {
+							mp3.play(dao.Hard_Ballad(ran[j]));
+							System.out.println("\r\n"
+									+ "########  ##          ###    ##    ##     ######   #######  ##    ##  ######   \r\n"
+									+ "##     ## ##         ## ##    ##  ##     ##    ## ##     ## ###   ## ##    ##  \r\n"
+									+ "##     ## ##        ##   ##    ####      ##       ##     ## ####  ## ##        \r\n"
+									+ "########  ##       ##     ##    ##        ######  ##     ## ## ## ## ##   #### \r\n"
+									+ "##        ##       #########    ##             ## ##     ## ##  #### ##    ##  \r\n"
+									+ "##        ##       ##     ##    ##       ##    ## ##     ## ##   ### ##    ##  \r\n"
+									+ "##        ######## ##     ##    ##        ######   #######  ##    ##  ######   \r\n"
+									+ "");	
+							System.out.print("정답을 입력해 주세요 : ");
+							String userAnswer = sc.next();
+							if (userAnswer.equals(dao.Hard_Ballad.get(ran[j]).getTitle())) {
+								System.out.println("정답입니다!!");
+								System.out.println();
+								point += 60;
+							}else {
+								System.out.println("틀렸습니다..");
+								
+								System.out.println("힌트의 요정 : 힌트를 사용하고 싶으면 키보드로 hint를 눌러봐! 다른버튼을 누르면 패스!");
+								String hi = sc.next();
+								if (hi.equals("hint") && hintCount > 0) {
+									hintCount -= 1;
+									System.out.println(":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
+											+ ":+:    :+:     :+:     :+:+:   :+:     :+:      \r\n"
+											+ "+:+    +:+     +:+     :+:+:+  +:+     +:+      \r\n"
+											+ "+#++:++#++     +#+     +#+ +:+ +#+     +#+      \r\n"
+											+ "+#+    +#+     +#+     +#+  +#+#+#     +#+      \r\n"
+											+ "#+#    #+#     #+#     #+#   #+#+#     #+#      \r\n"
+											+ "###    ### ########### ###    ####     ###  ");
+									
+									System.out.println();
+									System.out.println();
+									System.out.println( "초성힌트 : " + dao.Hard_Ballad.get(ran[j]).getSpell());
+									System.out.println("정달을 입력해주세요 :  ");
+									String hint_an =sc.next();
+									if(hint_an.equals(dao.Hard_Ballad.get(ran[j]).getTitle())) {
+										System.out.println();
+										System.out.println("정답입니다!! ");
+										point += 60;
+									}else {
+										System.out.println("힌트의 요정 : 힌트는 한번밖에 없는데 그거를 틀리다니.. 유감이야.. ");
+										System.out.println("\r\n"
+												+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+												+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+												+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+												+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+												+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+												+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+												+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+												+ "");
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									}
+									
+								
+							}else if(hi.equals("hint") && hintCount == 0) {
+								System.out.println("힌트의 요정 : 남아있는 힌트가 없어...");
+								System.out.println();
+								System.out.println();
+								point -= 30;
+							}else {
+								if(j < 3) {
+								System.out.println("\r\n"
+										+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+										+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+										+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+										+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+										+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+										+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+										+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+										+ "");
+								
+								point -= 30;
+								}
+								else {
+									point -= 30;
+								}
+							}
+							}
+							}
+								else {
+								System.out.println("게임 그만하고 싶나요??");
+							}
+							}
+							
+							System.out.println(" ::::::::      :::     ::::    ::::  ::::::::::   ::::::::  :::     ::: :::::::::: :::::::::  \r\n"
+									+ ":+:    :+:   :+: :+:   +:+:+: :+:+:+ :+:         :+:    :+: :+:     :+: :+:        :+:    :+: \r\n"
+									+ "+:+         +:+   +:+  +:+ +:+:+ +:+ +:+         +:+    +:+ +:+     +:+ +:+        +:+    +:+ \r\n"
+									+ ":#:        +#++:++#++: +#+  +:+  +#+ +#++:++#    +#+    +:+ +#+     +:+ +#++:++#   +#++:++#:  \r\n"
+									+ "+#+   +#+# +#+     +#+ +#+       +#+ +#+         +#+    +#+  +#+   +#+  +#+        +#+    +#+ \r\n"
+									+ "#+#    #+# #+#     #+# #+#       #+# #+#         #+#    #+#   #+#+#+#   #+#        #+#    #+# \r\n"
+									+ " ########  ###     ### ###       ### ##########   ########      ###     ########## ###    ### ");
+
+							System.out.println("동료를 모으는 게임이 끝났습니다.");
+							System.out.println("당신의 점수는 : " + point + "입니다.");
+							
+							
+							System.out.println();
+							dao.End(id, point);
+							break;
+						}
+					// Easy_dance 시작==============================================================================================================
+						else if (choiceGenre == 2 && choiceLevel == 1) {
 							for(int j = 0; j < 3; j++) {
+								System.out.println("노래를 듣고 제목을 입력해주세요");
+								System.out.println("재생은 1번 입니다.");
+								
+							int star = sc.nextInt();
+							System.out.println();
+							System.out.println();
+							System.out.println();
+							if(star == 1) {
 							mp3.play(dao.Easy_Dance(ran[j]));
-							System.out.println(dao.Easy_Dance(ran[j]));
-								
+							System.out.println("\r\n"
+									+ "########  ##          ###    ##    ##     ######   #######  ##    ##  ######   \r\n"
+									+ "##     ## ##         ## ##    ##  ##     ##    ## ##     ## ###   ## ##    ##  \r\n"
+									+ "##     ## ##        ##   ##    ####      ##       ##     ## ####  ## ##        \r\n"
+									+ "########  ##       ##     ##    ##        ######  ##     ## ## ## ## ##   #### \r\n"
+									+ "##        ##       #########    ##             ## ##     ## ##  #### ##    ##  \r\n"
+									+ "##        ##       ##     ##    ##       ##    ## ##     ## ##   ### ##    ##  \r\n"
+									+ "##        ######## ##     ##    ##        ######   #######  ##    ##  ######   \r\n"
+									+ "");
 							System.out.print("정답을 입력해 주세요 : ");
 							String userAnswer = sc.next();
-							
-							System.out.println("다시 들어보려면 R을 입력하세요");
-							String replay = sc.next();
-							}
+							if (userAnswer.equals(dao.Easy_Dance.get(ran[j]).getTitle())) {
+								System.out.println("정답입니다!!");
+								System.out.println();
+								point += 30;
 							}else {
+								System.out.println("틀렸습니다..");
+								
+								System.out.println("힌트의 요정 : 힌트를 사용하고 싶으면 키보드로 hint를 눌러봐! 다른버튼을 누르면 패스!");
+								String hi = sc.next();
+								if (hi.equals("hint") && hintCount > 0) {
+									hintCount -= 1;
+									System.out.println(":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
+											+ ":+:    :+:     :+:     :+:+:   :+:     :+:      \r\n"
+											+ "+:+    +:+     +:+     :+:+:+  +:+     +:+      \r\n"
+											+ "+#++:++#++     +#+     +#+ +:+ +#+     +#+      \r\n"
+											+ "+#+    +#+     +#+     +#+  +#+#+#     +#+      \r\n"
+											+ "#+#    #+#     #+#     #+#   #+#+#     #+#      \r\n"
+											+ "###    ### ########### ###    ####     ###  ");
+									
+									System.out.println();
+									System.out.println();
+									System.out.println( "초성힌트 : " + dao.Easy_Dance.get(ran[j]).getSpell());
+									System.out.println("정달을 입력해주세요 :  ");
+									String hint_an =sc.next();
+									if(hint_an.equals(dao.Easy_Dance.get(ran[j]).getTitle())) {
+										System.out.println();
+										System.out.println("정답입니다!! ");
+										point += 30;
+									}else {
+										System.out.println("힌트의 요정 : 힌트는 한번밖에 없는데 그거를 틀리다니.. 유감이야.. ");
+										System.out.println("\r\n"
+												+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+												+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+												+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+												+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+												+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+												+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+												+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+												+ "");
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									}
+									
+								
+							}else if(hi.equals("hint") && hintCount == 0) {
+								System.out.println("힌트의 요정 : 남아있는 힌트가 없어...");
+								System.out.println();
+								System.out.println();
+								point -= 15;
+							}else {
+								if(j < 3) {
+								System.out.println("\r\n"
+										+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+										+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+										+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+										+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+										+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+										+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+										+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+										+ "");
+								
+								point -= 15;
+								}
+								else {
+									point -= 15;
+								}
+							}
+							}
+							}
+								else {
 								System.out.println("게임 그만하고 싶나요??");
 							}
-						} 
+							}
+								//3문제 끝나고 보너스 스테이지
+							dao.bonus(point);
+							
+							//다시 3문제 시작 ============================================================================================
+							for(int j = 4; j < 6; j++) {
+								System.out.println("노래를 듣고 제목을 입력해주세요");
+								System.out.println("재생은 1번 입니다.");
+								
+							int star = sc.nextInt();
+							System.out.println();
+							System.out.println();
+							System.out.println();
+							if(star == 1) {
+							mp3.play(dao.Easy_Dance(ran[j]));
+							System.out.println("\r\n"
+									+ "########  ##          ###    ##    ##     ######   #######  ##    ##  ######   \r\n"
+									+ "##     ## ##         ## ##    ##  ##     ##    ## ##     ## ###   ## ##    ##  \r\n"
+									+ "##     ## ##        ##   ##    ####      ##       ##     ## ####  ## ##        \r\n"
+									+ "########  ##       ##     ##    ##        ######  ##     ## ## ## ## ##   #### \r\n"
+									+ "##        ##       #########    ##             ## ##     ## ##  #### ##    ##  \r\n"
+									+ "##        ##       ##     ##    ##       ##    ## ##     ## ##   ### ##    ##  \r\n"
+									+ "##        ######## ##     ##    ##        ######   #######  ##    ##  ######   \r\n"
+									+ "");
+							System.out.print("정답을 입력해 주세요 : ");
+							String userAnswer = sc.next();
+							if (userAnswer.equals(dao.Easy_Dance.get(ran[j]).getTitle())) {
+								System.out.println("정답입니다!!");
+								System.out.println();
+								point += 30;
+							}else {
+								System.out.println("틀렸습니다..");
+								
+								System.out.println("힌트의 요정 : 힌트를 사용하고 싶으면 키보드로 hint를 눌러봐! 다른버튼을 누르면 패스!");
+								String hi = sc.next();
+								if (hi.equals("hint") && hintCount > 0) {
+									hintCount -= 1;
+									System.out.println(":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
+											+ ":+:    :+:     :+:     :+:+:   :+:     :+:      \r\n"
+											+ "+:+    +:+     +:+     :+:+:+  +:+     +:+      \r\n"
+											+ "+#++:++#++     +#+     +#+ +:+ +#+     +#+      \r\n"
+											+ "+#+    +#+     +#+     +#+  +#+#+#     +#+      \r\n"
+											+ "#+#    #+#     #+#     #+#   #+#+#     #+#      \r\n"
+											+ "###    ### ########### ###    ####     ###  ");
+									
+									System.out.println();
+									System.out.println();
+									System.out.println( "초성힌트 : " + dao.Easy_Dance.get(ran[j]).getSpell());
+									System.out.println("정달을 입력해주세요 :  ");
+									String hint_an =sc.next();
+									if(hint_an.equals(dao.Easy_Ballad.get(ran[j]).getTitle())) {
+										System.out.println();
+										System.out.println("정답입니다!! ");
+										point += 30;
+									}else {
+										System.out.println("힌트의 요정 : 힌트는 한번밖에 없는데 그거를 틀리다니.. 유감이야.. ");
+										System.out.println("\r\n"
+												+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+												+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+												+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+												+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+												+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+												+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+												+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+												+ "");
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									}
+									
+								
+							}else if(hi.equals("hint") && hintCount == 0) {
+								System.out.println("힌트의 요정 : 남아있는 힌트가 없어...");
+								System.out.println();
+								System.out.println();
+								point -= 15;
+							}else {
+								if(j < 3) {
+								System.out.println("\r\n"
+										+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+										+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+										+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+										+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+										+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+										+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+										+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+										+ "");
+								
+								point -= 15;
+								}
+								else {
+									point -= 15;
+								}
+							}
+							}
+							}
+								else {
+								System.out.println("게임 그만하고 싶나요??");
+							}
+							}
+							
+							System.out.println(" ::::::::      :::     ::::    ::::  ::::::::::   ::::::::  :::     ::: :::::::::: :::::::::  \r\n"
+									+ ":+:    :+:   :+: :+:   +:+:+: :+:+:+ :+:         :+:    :+: :+:     :+: :+:        :+:    :+: \r\n"
+									+ "+:+         +:+   +:+  +:+ +:+:+ +:+ +:+         +:+    +:+ +:+     +:+ +:+        +:+    +:+ \r\n"
+									+ ":#:        +#++:++#++: +#+  +:+  +#+ +#++:++#    +#+    +:+ +#+     +:+ +#++:++#   +#++:++#:  \r\n"
+									+ "+#+   +#+# +#+     +#+ +#+       +#+ +#+         +#+    +#+  +#+   +#+  +#+        +#+    +#+ \r\n"
+									+ "#+#    #+# #+#     #+# #+#       #+# #+#         #+#    #+#   #+#+#+#   #+#        #+#    #+# \r\n"
+									+ " ########  ###     ### ###       ### ##########   ########      ###     ########## ###    ### ");
+							System.out.println("동료를 모으는 게임이 끝났습니다.");
+							System.out.println("당신의 점수는 : " + point + "입니다.");
+							
+							
+							System.out.println();
+							dao.End(id, point);
+							break;
+						
+							//Hard_Dance ==================================================================================================
 						}else if (choiceGenre == 2 && choiceLevel == 2) {
-							for(int a = 0; a < 3; a++) {
+							for(int j = 0; j < 3; j++) {
 								System.out.println("노래를 듣고 제목을 입력해주세요");
 								System.out.println("재생은 1번 입니다.");
+								
 							int star = sc.nextInt();
+							System.out.println();
+							System.out.println();
+							System.out.println();
 							if(star == 1) {
-							for(int j = 0; j < 3; j++) {
 							mp3.play(dao.Hard_Dance(ran[j]));
-							System.out.println(dao.Hard_Dance(ran[j]));
-								
+							System.out.println("\r\n"
+									+ "########  ##          ###    ##    ##     ######   #######  ##    ##  ######   \r\n"
+									+ "##     ## ##         ## ##    ##  ##     ##    ## ##     ## ###   ## ##    ##  \r\n"
+									+ "##     ## ##        ##   ##    ####      ##       ##     ## ####  ## ##        \r\n"
+									+ "########  ##       ##     ##    ##        ######  ##     ## ## ## ## ##   #### \r\n"
+									+ "##        ##       #########    ##             ## ##     ## ##  #### ##    ##  \r\n"
+									+ "##        ##       ##     ##    ##       ##    ## ##     ## ##   ### ##    ##  \r\n"
+									+ "##        ######## ##     ##    ##        ######   #######  ##    ##  ######   \r\n"
+									+ "");
 							System.out.print("정답을 입력해 주세요 : ");
 							String userAnswer = sc.next();
-							
-							System.out.println("다시 들어보려면 R을 입력하세요");
-							String replay = sc.next();
-							}
+							if (userAnswer.equals(dao.Hard_Dance.get(ran[j]).getTitle())) {
+								System.out.println("정답입니다!!");
+								System.out.println();
+								point += 60;
 							}else {
+								System.out.println("틀렸습니다..");
+								
+								System.out.println("힌트의 요정 : 힌트를 사용하고 싶으면 키보드로 hint를 눌러봐! 다른버튼을 누르면 패스!");
+								String hi = sc.next();
+								if (hi.equals("hint") && hintCount > 0) {
+									hintCount -= 1;
+									System.out.println(":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
+											+ ":+:    :+:     :+:     :+:+:   :+:     :+:      \r\n"
+											+ "+:+    +:+     +:+     :+:+:+  +:+     +:+      \r\n"
+											+ "+#++:++#++     +#+     +#+ +:+ +#+     +#+      \r\n"
+											+ "+#+    +#+     +#+     +#+  +#+#+#     +#+      \r\n"
+											+ "#+#    #+#     #+#     #+#   #+#+#     #+#      \r\n"
+											+ "###    ### ########### ###    ####     ###  ");
+									
+									System.out.println();
+									System.out.println();
+									System.out.println( "초성힌트 : " + dao.Hard_Dance.get(ran[j]).getSpell());
+									System.out.println("정달을 입력해주세요 :  ");
+									String hint_an =sc.next();
+									if(hint_an.equals(dao.Hard_Dance.get(ran[j]).getTitle())) {
+										System.out.println();
+										System.out.println("정답입니다!! ");
+										point += 60;
+									}else {
+										System.out.println("힌트의 요정 : 힌트는 한번밖에 없는데 그거를 틀리다니.. 유감이야.. ");
+										System.out.println("\r\n"
+												+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+												+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+												+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+												+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+												+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+												+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+												+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+												+ "");
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									}
+									
+								
+							}else if(hi.equals("hint") && hintCount == 0) {
+								System.out.println("힌트의 요정 : 남아있는 힌트가 없어...");
+								System.out.println();
+								System.out.println();
+								point -= 30;
+							}else {
+								if(j < 3) {
+								System.out.println("\r\n"
+										+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+										+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+										+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+										+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+										+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+										+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+										+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+										+ "");
+								
+								point -= 30;
+								}
+								else {
+									point -= 30;
+								}
+							}
+							}
+							}
+								else {
 								System.out.println("게임 그만하고 싶나요??");
 							}
-						} 
+							}
+								//3문제 끝나고 보너스 스테이지
+							dao.bonus(point);
+							
+							//다시 3문제 시작 ============================================================================================
+							for(int j = 4; j < 6; j++) {
+								System.out.println("노래를 듣고 제목을 입력해주세요");
+								System.out.println("재생은 1번 입니다.");
+								
+							int star = sc.nextInt();
+							System.out.println();
+							System.out.println();
+							System.out.println();
+							if(star == 1) {
+							mp3.play(dao.Hard_Dance(ran[j]));
+							System.out.println("\r\n"
+									+ "########  ##          ###    ##    ##     ######   #######  ##    ##  ######   \r\n"
+									+ "##     ## ##         ## ##    ##  ##     ##    ## ##     ## ###   ## ##    ##  \r\n"
+									+ "##     ## ##        ##   ##    ####      ##       ##     ## ####  ## ##        \r\n"
+									+ "########  ##       ##     ##    ##        ######  ##     ## ## ## ## ##   #### \r\n"
+									+ "##        ##       #########    ##             ## ##     ## ##  #### ##    ##  \r\n"
+									+ "##        ##       ##     ##    ##       ##    ## ##     ## ##   ### ##    ##  \r\n"
+									+ "##        ######## ##     ##    ##        ######   #######  ##    ##  ######   \r\n"
+									+ "");
+							System.out.print("정답을 입력해 주세요 : ");
+							String userAnswer = sc.next();
+							if (userAnswer.equals(dao.Hard_Dance.get(ran[j]).getTitle())) {
+								System.out.println("정답입니다!!");
+								System.out.println();
+								point += 60;
+							}else {
+								System.out.println("틀렸습니다..");
+								
+								System.out.println("힌트의 요정 : 힌트를 사용하고 싶으면 키보드로 hint를 눌러봐! 다른버튼을 누르면 패스!");
+								String hi = sc.next();
+								if (hi.equals("hint") && hintCount > 0) {
+									hintCount -= 1;
+									System.out.println(":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
+											+ ":+:    :+:     :+:     :+:+:   :+:     :+:      \r\n"
+											+ "+:+    +:+     +:+     :+:+:+  +:+     +:+      \r\n"
+											+ "+#++:++#++     +#+     +#+ +:+ +#+     +#+      \r\n"
+											+ "+#+    +#+     +#+     +#+  +#+#+#     +#+      \r\n"
+											+ "#+#    #+#     #+#     #+#   #+#+#     #+#      \r\n"
+											+ "###    ### ########### ###    ####     ###  ");
+									
+									System.out.println();
+									System.out.println();
+									System.out.println( "초성힌트 : " + dao.Hard_Dance.get(ran[j]).getSpell());
+									System.out.println("정달을 입력해주세요 :  ");
+									String hint_an =sc.next();
+									if(hint_an.equals(dao.Hard_Dance.get(ran[j]).getTitle())) {
+										System.out.println();
+										System.out.println("정답입니다!! ");
+										point += 60;
+									}else {
+										System.out.println("힌트의 요정 : 힌트는 한번밖에 없는데 그거를 틀리다니.. 유감이야.. ");
+										System.out.println("\r\n"
+												+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+												+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+												+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+												+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+												+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+												+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+												+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+												+ "");
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									}
+									
+								
+							}else if(hi.equals("hint") && hintCount == 0) {
+								System.out.println("힌트의 요정 : 남아있는 힌트가 없어...");
+								System.out.println();
+								System.out.println();
+								point -= 30;
+							}else {
+								if(j < 3) {
+								System.out.println("\r\n"
+										+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+										+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+										+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+										+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+										+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+										+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+										+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+										+ "");
+								
+								point -= 30;
+								}
+								else {
+									point -= 30;
+								}
+							}
+							}
+							}
+								else {
+								System.out.println("게임 그만하고 싶나요??");
+							}
+							}
+							
+							System.out.println(" ::::::::      :::     ::::    ::::  ::::::::::   ::::::::  :::     ::: :::::::::: :::::::::  \r\n"
+									+ ":+:    :+:   :+: :+:   +:+:+: :+:+:+ :+:         :+:    :+: :+:     :+: :+:        :+:    :+: \r\n"
+									+ "+:+         +:+   +:+  +:+ +:+:+ +:+ +:+         +:+    +:+ +:+     +:+ +:+        +:+    +:+ \r\n"
+									+ ":#:        +#++:++#++: +#+  +:+  +#+ +#++:++#    +#+    +:+ +#+     +:+ +#++:++#   +#++:++#:  \r\n"
+									+ "+#+   +#+# +#+     +#+ +#+       +#+ +#+         +#+    +#+  +#+   +#+  +#+        +#+    +#+ \r\n"
+									+ "#+#    #+# #+#     #+# #+#       #+# #+#         #+#    #+#   #+#+#+#   #+#        #+#    #+# \r\n"
+									+ " ########  ###     ### ###       ### ##########   ########      ###     ########## ###    ### ");
+							System.out.println("동료를 모으는 게임이 끝났습니다.");
+							System.out.println("당신의 점수는 : " + point + "입니다.");
+							
+							
+							System.out.println();
+							dao.End(id, point);
+							break;
+						//Easy_Hiphop =================================================================================================
 						}else if (choiceGenre == 3 && choiceLevel == 1) {
-
-							for(int a = 0; a < 3; a++) {
+							for(int j = 0; j < 3; j++) {
 								System.out.println("노래를 듣고 제목을 입력해주세요");
 								System.out.println("재생은 1번 입니다.");
+								
 							int star = sc.nextInt();
+							System.out.println();
+							System.out.println();
+							System.out.println();
 							if(star == 1) {
-							for(int j = 0; j < 3; j++) {
 							mp3.play(dao.Easy_Hiphop(ran[j]));
-							System.out.println(dao.Easy_Hiphop(ran[j]));
-								
+							System.out.println("\r\n"
+									+ "########  ##          ###    ##    ##     ######   #######  ##    ##  ######   \r\n"
+									+ "##     ## ##         ## ##    ##  ##     ##    ## ##     ## ###   ## ##    ##  \r\n"
+									+ "##     ## ##        ##   ##    ####      ##       ##     ## ####  ## ##        \r\n"
+									+ "########  ##       ##     ##    ##        ######  ##     ## ## ## ## ##   #### \r\n"
+									+ "##        ##       #########    ##             ## ##     ## ##  #### ##    ##  \r\n"
+									+ "##        ##       ##     ##    ##       ##    ## ##     ## ##   ### ##    ##  \r\n"
+									+ "##        ######## ##     ##    ##        ######   #######  ##    ##  ######   \r\n"
+									+ "");
 							System.out.print("정답을 입력해 주세요 : ");
 							String userAnswer = sc.next();
-							
-							System.out.println("다시 들어보려면 R을 입력하세요");
-							String replay = sc.next();
-							}
+							if (userAnswer.equals(dao.Easy_Hiphop.get(ran[j]).getTitle())) {
+								System.out.println("정답입니다!!");
+								System.out.println();
+								point += 30;
 							}else {
+								System.out.println("틀렸습니다..");
+								
+								System.out.println("힌트의 요정 : 힌트를 사용하고 싶으면 키보드로 hint를 눌러봐! 다른버튼을 누르면 패스!");
+								String hi = sc.next();
+								if (hi.equals("hint") && hintCount > 0) {
+									hintCount -= 1;
+									System.out.println(":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
+											+ ":+:    :+:     :+:     :+:+:   :+:     :+:      \r\n"
+											+ "+:+    +:+     +:+     :+:+:+  +:+     +:+      \r\n"
+											+ "+#++:++#++     +#+     +#+ +:+ +#+     +#+      \r\n"
+											+ "+#+    +#+     +#+     +#+  +#+#+#     +#+      \r\n"
+											+ "#+#    #+#     #+#     #+#   #+#+#     #+#      \r\n"
+											+ "###    ### ########### ###    ####     ###  ");
+									
+									System.out.println();
+									System.out.println();
+									System.out.println( "초성힌트 : " + dao.Easy_Hiphop.get(ran[j]).getSpell());
+									System.out.println("정달을 입력해주세요 :  ");
+									String hint_an =sc.next();
+									if(hint_an.equals(dao.Easy_Hiphop.get(ran[j]).getTitle())) {
+										System.out.println();
+										System.out.println("정답입니다!! ");
+										point += 30;
+									}else {
+										System.out.println("힌트의 요정 : 힌트는 한번밖에 없는데 그거를 틀리다니.. 유감이야.. ");
+										System.out.println("\r\n"
+												+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+												+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+												+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+												+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+												+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+												+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+												+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+												+ "");
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									}
+									
+								
+							}else if(hi.equals("hint") && hintCount == 0) {
+								System.out.println("힌트의 요정 : 남아있는 힌트가 없어...");
+								System.out.println();
+								System.out.println();
+								point -= 15;
+							}else {
+								if(j < 3) {
+								System.out.println("\r\n"
+										+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+										+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+										+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+										+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+										+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+										+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+										+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+										+ "");
+								
+								point -= 15;
+								}
+								else {
+									point -= 15;
+								}
+							}
+							}
+							}
+								else {
 								System.out.println("게임 그만하고 싶나요??");
 							}
-						} 
-						}else if (choiceGenre == 3 && choiceLevel == 2) {
-							for(int a = 0; a < 3; a++) {
+							}
+								//3문제 끝나고 보너스 스테이지
+							dao.bonus(point);
+							
+							//다시 3문제 시작 ============================================================================================
+							for(int j = 4; j < 6; j++) {
 								System.out.println("노래를 듣고 제목을 입력해주세요");
 								System.out.println("재생은 1번 입니다.");
-							int star = sc.nextInt();
-							if(star == 1) {
-							for(int j = 0; j < 3; j++) {
-							mp3.play(dao.Hard_Hiphop(ran[j]));
-							System.out.println(dao.Hard_Hiphop(ran[j]));
 								
+							int star = sc.nextInt();
+							System.out.println();
+							System.out.println();
+							System.out.println();
+							if(star == 1) {
+							mp3.play(dao.Easy_Hiphop(ran[j]));
+							System.out.println("\r\n"
+									+ "########  ##          ###    ##    ##     ######   #######  ##    ##  ######   \r\n"
+									+ "##     ## ##         ## ##    ##  ##     ##    ## ##     ## ###   ## ##    ##  \r\n"
+									+ "##     ## ##        ##   ##    ####      ##       ##     ## ####  ## ##        \r\n"
+									+ "########  ##       ##     ##    ##        ######  ##     ## ## ## ## ##   #### \r\n"
+									+ "##        ##       #########    ##             ## ##     ## ##  #### ##    ##  \r\n"
+									+ "##        ##       ##     ##    ##       ##    ## ##     ## ##   ### ##    ##  \r\n"
+									+ "##        ######## ##     ##    ##        ######   #######  ##    ##  ######   \r\n"
+									+ "");
 							System.out.print("정답을 입력해 주세요 : ");
 							String userAnswer = sc.next();
-							
-							System.out.println("다시 들어보려면 R을 입력하세요");
-							String replay = sc.next();
-							}
+							if (userAnswer.equals(dao.Easy_Hiphop.get(ran[j]).getTitle())) {
+								System.out.println("정답입니다!!");
+								System.out.println();
+								point += 30;
 							}else {
+								System.out.println("틀렸습니다..");
+								
+								System.out.println("힌트의 요정 : 힌트를 사용하고 싶으면 키보드로 hint를 눌러봐! 다른버튼을 누르면 패스!");
+								String hi = sc.next();
+								if (hi.equals("hint") && hintCount > 0) {
+									hintCount -= 1;
+									System.out.println(":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
+											+ ":+:    :+:     :+:     :+:+:   :+:     :+:      \r\n"
+											+ "+:+    +:+     +:+     :+:+:+  +:+     +:+      \r\n"
+											+ "+#++:++#++     +#+     +#+ +:+ +#+     +#+      \r\n"
+											+ "+#+    +#+     +#+     +#+  +#+#+#     +#+      \r\n"
+											+ "#+#    #+#     #+#     #+#   #+#+#     #+#      \r\n"
+											+ "###    ### ########### ###    ####     ###  ");
+									
+									System.out.println();
+									System.out.println();
+									System.out.println( "초성힌트 : " + dao.Easy_Hiphop.get(ran[j]).getSpell());
+									System.out.println("정달을 입력해주세요 :  ");
+									String hint_an =sc.next();
+									if(hint_an.equals(dao.Easy_Hiphop.get(ran[j]).getTitle())) {
+										System.out.println();
+										System.out.println("정답입니다!! ");
+										point += 30;
+									}else {
+										System.out.println("힌트의 요정 : 힌트는 한번밖에 없는데 그거를 틀리다니.. 유감이야.. ");
+										System.out.println("\r\n"
+												+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+												+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+												+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+												+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+												+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+												+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+												+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+												+ "");
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									}
+									
+								
+							}else if(hi.equals("hint") && hintCount == 0) {
+								System.out.println("힌트의 요정 : 남아있는 힌트가 없어...");
+								System.out.println();
+								System.out.println();
+								point -= 15;
+							}else {
+								if(j < 3) {
+								System.out.println("\r\n"
+										+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+										+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+										+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+										+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+										+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+										+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+										+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+										+ "");
+								
+								point -= 15;
+								}
+								else {
+									point -= 15;
+								}
+							}
+							}
+							}
+								else {
 								System.out.println("게임 그만하고 싶나요??");
 							}
-						}
-					}
-				} 
+							}
+							
+							System.out.println(" ::::::::      :::     ::::    ::::  ::::::::::   ::::::::  :::     ::: :::::::::: :::::::::  \r\n"
+									+ ":+:    :+:   :+: :+:   +:+:+: :+:+:+ :+:         :+:    :+: :+:     :+: :+:        :+:    :+: \r\n"
+									+ "+:+         +:+   +:+  +:+ +:+:+ +:+ +:+         +:+    +:+ +:+     +:+ +:+        +:+    +:+ \r\n"
+									+ ":#:        +#++:++#++: +#+  +:+  +#+ +#++:++#    +#+    +:+ +#+     +:+ +#++:++#   +#++:++#:  \r\n"
+									+ "+#+   +#+# +#+     +#+ +#+       +#+ +#+         +#+    +#+  +#+   +#+  +#+        +#+    +#+ \r\n"
+									+ "#+#    #+# #+#     #+# #+#       #+# #+#         #+#    #+#   #+#+#+#   #+#        #+#    #+# \r\n"
+									+ " ########  ###     ### ###       ### ##########   ########      ###     ########## ###    ### ");
+							System.out.println("동료를 모으는 게임이 끝났습니다.");
+							System.out.println("당신의 점수는 : " + point + "입니다.");
+							
+							
+							System.out.println();
+							dao.End(id, point);
+							break;
+						// Hard_Hiphop ============================================================================================
+						}else if (choiceGenre == 3 && choiceLevel == 2) {
+							for(int j = 0; j < 3; j++) {
+								System.out.println("노래를 듣고 제목을 입력해주세요");
+								System.out.println("재생은 1번 입니다.");
+								
+							int star = sc.nextInt();
+							System.out.println();
+							System.out.println();
+							System.out.println();
+							if(star == 1) {
+							mp3.play(dao.Hard_Hiphop(ran[j]));
+							System.out.println("\r\n"
+									+ "########  ##          ###    ##    ##     ######   #######  ##    ##  ######   \r\n"
+									+ "##     ## ##         ## ##    ##  ##     ##    ## ##     ## ###   ## ##    ##  \r\n"
+									+ "##     ## ##        ##   ##    ####      ##       ##     ## ####  ## ##        \r\n"
+									+ "########  ##       ##     ##    ##        ######  ##     ## ## ## ## ##   #### \r\n"
+									+ "##        ##       #########    ##             ## ##     ## ##  #### ##    ##  \r\n"
+									+ "##        ##       ##     ##    ##       ##    ## ##     ## ##   ### ##    ##  \r\n"
+									+ "##        ######## ##     ##    ##        ######   #######  ##    ##  ######   \r\n"
+									+ "");
+							System.out.print("정답을 입력해 주세요 : ");
+							String userAnswer = sc.next();
+							if (userAnswer.equals(dao.Hard_Hiphop.get(ran[j]).getTitle())) {
+								System.out.println("정답입니다!!");
+								System.out.println();
+								point += 60;
+							}else {
+								System.out.println("틀렸습니다..");
+								
+								System.out.println("힌트의 요정 : 힌트를 사용하고 싶으면 키보드로 hint를 눌러봐! 다른버튼을 누르면 패스!");
+								String hi = sc.next();
+								if (hi.equals("hint") && hintCount > 0) {
+									hintCount -= 1;
+									System.out.println(":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
+											+ ":+:    :+:     :+:     :+:+:   :+:     :+:      \r\n"
+											+ "+:+    +:+     +:+     :+:+:+  +:+     +:+      \r\n"
+											+ "+#++:++#++     +#+     +#+ +:+ +#+     +#+      \r\n"
+											+ "+#+    +#+     +#+     +#+  +#+#+#     +#+      \r\n"
+											+ "#+#    #+#     #+#     #+#   #+#+#     #+#      \r\n"
+											+ "###    ### ########### ###    ####     ###  ");
+									
+									System.out.println();
+									System.out.println();
+									System.out.println( "초성힌트 : " + dao.Hard_Hiphop.get(ran[j]).getSpell());
+									System.out.println("정달을 입력해주세요 :  ");
+									String hint_an =sc.next();
+									if(hint_an.equals(dao.Hard_Hiphop.get(ran[j]).getTitle())) {
+										System.out.println();
+										System.out.println("정답입니다!! ");
+										point += 60;
+									}else {
+										System.out.println("힌트의 요정 : 힌트는 한번밖에 없는데 그거를 틀리다니.. 유감이야.. ");
+										System.out.println("\r\n"
+												+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+												+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+												+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+												+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+												+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+												+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+												+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+												+ "");
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									}
+									
+								
+							}else if(hi.equals("hint") && hintCount == 0) {
+								System.out.println("힌트의 요정 : 남아있는 힌트가 없어...");
+								System.out.println();
+								System.out.println();
+								point -= 30;
+							}else {
+								if(j < 3) {
+								System.out.println("\r\n"
+										+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+										+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+										+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+										+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+										+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+										+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+										+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+										+ "");
+								
+								point -= 30;
+								}
+								else {
+									point -= 30;
+								}
+							}
+							}
+							}
+								else {
+								System.out.println("게임 그만하고 싶나요??");
+							}
+							}
+								//3문제 끝나고 보너스 스테이지
+							dao.bonus(point);
+							
+							//다시 3문제 시작 ============================================================================================
+							for(int j = 4; j < 6; j++) {
+								System.out.println("노래를 듣고 제목을 입력해주세요");
+								System.out.println("재생은 1번 입니다.");
+								
+							int star = sc.nextInt();
+							System.out.println();
+							System.out.println();
+							System.out.println();
+							if(star == 1) {
+							mp3.play(dao.Hard_Hiphop(ran[j]));
+							System.out.println("\r\n"
+									+ "########  ##          ###    ##    ##     ######   #######  ##    ##  ######   \r\n"
+									+ "##     ## ##         ## ##    ##  ##     ##    ## ##     ## ###   ## ##    ##  \r\n"
+									+ "##     ## ##        ##   ##    ####      ##       ##     ## ####  ## ##        \r\n"
+									+ "########  ##       ##     ##    ##        ######  ##     ## ## ## ## ##   #### \r\n"
+									+ "##        ##       #########    ##             ## ##     ## ##  #### ##    ##  \r\n"
+									+ "##        ##       ##     ##    ##       ##    ## ##     ## ##   ### ##    ##  \r\n"
+									+ "##        ######## ##     ##    ##        ######   #######  ##    ##  ######   \r\n"
+									+ "");
+							System.out.print("정답을 입력해 주세요 : ");
+							String userAnswer = sc.next();
+							if (userAnswer.equals(dao.Hard_Hiphop.get(ran[j]).getTitle())) {
+								System.out.println("정답입니다!!");
+								System.out.println();
+								point += 60;
+							}else {
+								System.out.println("틀렸습니다..");
+								
+								System.out.println("힌트의 요정 : 힌트를 사용하고 싶으면 키보드로 hint를 눌러봐! 다른버튼을 누르면 패스!");
+								String hi = sc.next();
+								if (hi.equals("hint") && hintCount > 0) {
+									hintCount -= 1;
+									System.out.println(":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
+											+ ":+:    :+:     :+:     :+:+:   :+:     :+:      \r\n"
+											+ "+:+    +:+     +:+     :+:+:+  +:+     +:+      \r\n"
+											+ "+#++:++#++     +#+     +#+ +:+ +#+     +#+      \r\n"
+											+ "+#+    +#+     +#+     +#+  +#+#+#     +#+      \r\n"
+											+ "#+#    #+#     #+#     #+#   #+#+#     #+#      \r\n"
+											+ "###    ### ########### ###    ####     ###  ");
+									
+									System.out.println();
+									System.out.println();
+									System.out.println( "초성힌트 : " + dao.Hard_Hiphop.get(ran[j]).getSpell());
+									System.out.println("정달을 입력해주세요 :  ");
+									String hint_an =sc.next();
+									if(hint_an.equals(dao.Hard_Hiphop.get(ran[j]).getTitle())) {
+										System.out.println();
+										System.out.println("정답입니다!! ");
+										point += 60;
+									}else {
+										System.out.println("힌트의 요정 : 힌트는 한번밖에 없는데 그거를 틀리다니.. 유감이야.. ");
+										System.out.println("\r\n"
+												+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+												+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+												+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+												+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+												+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+												+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+												+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+												+ "");
+									System.out.println();
+									System.out.println();
+									System.out.println();
+									}
+									
+								
+							}else if(hi.equals("hint") && hintCount == 0) {
+								System.out.println("힌트의 요정 : 남아있는 힌트가 없어...");
+								System.out.println();
+								System.out.println();
+								point -= 30;
+							}else {
+								if(j < 3) {
+								System.out.println("\r\n"
+										+ "      ::::    :::       ::::::::::       :::    :::   :::::::::::        ::::::::       ::::::::       ::::    :::       :::::::: \r\n"
+										+ "     :+:+:   :+:       :+:              :+:    :+:       :+:           :+:    :+:     :+:    :+:      :+:+:   :+:      :+:    :+: \r\n"
+										+ "    :+:+:+  +:+       +:+               +:+  +:+        +:+           +:+            +:+    +:+      :+:+:+  +:+      +:+         \r\n"
+										+ "   +#+ +:+ +#+       +#++:++#           +#++:+         +#+           +#++:++#++     +#+    +:+      +#+ +:+ +#+      :#:          \r\n"
+										+ "  +#+  +#+#+#       +#+               +#+  +#+        +#+                  +#+     +#+    +#+      +#+  +#+#+#      +#+   +#+#    \r\n"
+										+ " #+#   #+#+#       #+#              #+#    #+#       #+#           #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#     \r\n"
+										+ "###    ####       ##########       ###    ###       ###            ########       ########       ###    ####       ########       \r\n"
+										+ "");
+								
+								point -= 30;
+								}
+								else {
+									point -= 30;
+								}
+							}
+							}
+							}
+								else {
+								System.out.println("게임 그만하고 싶나요??");
+							}
+							}
+							
+							System.out.println(" ::::::::      :::     ::::    ::::  ::::::::::   ::::::::  :::     ::: :::::::::: :::::::::  \r\n"
+									+ ":+:    :+:   :+: :+:   +:+:+: :+:+:+ :+:         :+:    :+: :+:     :+: :+:        :+:    :+: \r\n"
+									+ "+:+         +:+   +:+  +:+ +:+:+ +:+ +:+         +:+    +:+ +:+     +:+ +:+        +:+    +:+ \r\n"
+									+ ":#:        +#++:++#++: +#+  +:+  +#+ +#++:++#    +#+    +:+ +#+     +:+ +#++:++#   +#++:++#:  \r\n"
+									+ "+#+   +#+# +#+     +#+ +#+       +#+ +#+         +#+    +#+  +#+   +#+  +#+        +#+    +#+ \r\n"
+									+ "#+#    #+# #+#     #+# #+#       #+# #+#         #+#    #+#   #+#+#+#   #+#        #+#    #+# \r\n"
+									+ " ########  ###     ### ###       ### ##########   ########      ###     ########## ###    ### ");
+							System.out.println("동료를 모으는 게임이 끝났습니다.");
+							System.out.println("당신의 점수는 : " + point + "입니다.");
+							
+							
+							System.out.println();
+							dao.End(id, point);
+							break;
+							}
+						
+					
+				
 					}else {
 					System.out.println("넌 누구길래 동료인 척 하는거지?");
 				}
@@ -394,34 +1545,6 @@ public class Game_Main {
 			}
 
 		}
-//		if (choiceGenre == 1 && choiceLevel == 1) {
-//
-//			System.out.println("발라드 easy모드");
-//			String userAnswer = sc.next();
-//			
-//			
-//		} else if (choiceGenre == 1 && choiceLevel == 2) {
-//
-//			System.out.println("발라드 hard모드");
-//			String userAnswer = sc.next();
-//
-//		} else if (choiceGenre == 2 && choiceLevel == 1) {
-//			System.out.println("댄스 easy모드");
-//			String userAnswer = sc.next();
-//
-//		} else if (choiceGenre == 2 && choiceLevel == 2) {
-//			System.out.println("댄스 hard모드");
-//			String userAnswer = sc.next();
-//
-//		} else if (choiceGenre == 3 && choiceLevel == 1) {
-//			System.out.println("힙합 easy모드");
-//			String userAnswer = sc.next();
-//		} else if (choiceGenre == 3 && choiceLevel == 2) {
-//
-//			System.out.println("힙합 hard모드");
-//			String userAnswer = sc.next();
-//		}
 		}
 	}
-
 }
