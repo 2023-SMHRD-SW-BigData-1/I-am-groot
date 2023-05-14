@@ -822,7 +822,7 @@ public class Game_Main {
 									System.out.println( "초성힌트 : " + dao.Easy_Dance.get(ran[j]).getSpell());
 									System.out.println("정달을 입력해주세요 :  ");
 									String hint_an =sc.next();
-									if(hint_an.equals(dao.Easy_Ballad.get(ran[j]).getTitle())) {
+									if(hint_an.equals(dao.Easy_Dance.get(ran[j]).getTitle())) {
 										System.out.println();
 										System.out.println("정답입니다!! ");
 										point += 30;
