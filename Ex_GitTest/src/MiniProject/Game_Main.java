@@ -32,7 +32,7 @@ public class Game_Main {
 		int hintCount = 1;
 
 		// 게임시작 전 선택 페이지
-		
+		m.STBGM();
 		System.out.println(
 
 				"\r\n" + ".___  ___.  __    __       _______. __    ______      _______      ___      .___  ___.  _______ \r\n"
@@ -249,6 +249,7 @@ public class Game_Main {
 						}
 						System.out.println("===== 게임을 시작하려면 아무 키나 입력 후 엔터를 눌러주세요 =====");
 						String gameStart = sc.next();
+						m.BGMend();
 						if (gameStart != null) {
 
 							System.out.println("\r\n" + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
@@ -389,7 +390,9 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
+								m.CBGM();
 								battpoint += dao.bonus(point); 
+								m.BGMend();
 
 								// 다시 3문제 시작
 								// ============================================================================================
