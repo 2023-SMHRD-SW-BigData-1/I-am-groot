@@ -9,6 +9,7 @@ import javazoom.jl.player.MP3Player;
 public class Game_Main {
 
 	public static void main(String[] args) {
+		
 		Scanner sc = new Scanner(System.in);
 		Random rd = new Random();
 		DAO dao = new DAO();
@@ -32,6 +33,7 @@ public class Game_Main {
 		int hintCount = 1;
 
 		// 게임시작 전 선택 페이지
+		while(true) {
 		m.STBGM();
 		System.out.println(
 
@@ -1813,4 +1815,6 @@ public class Game_Main {
 			}
 		}
 	}
+	}
 }
+	
