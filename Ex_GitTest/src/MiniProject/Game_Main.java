@@ -318,7 +318,7 @@ public class Game_Main {
 										String userAnswer = sc.next();
 										if (userAnswer.equals(dao.Easy_Ballad.get(ran[j]).getTitle())) {
 											System.out.println("정답이야!!");
-											System.out.println("다음 곡도 맞출 수 있지?");
+											System.out.println("다음 곡도 맞힐 수 있지?");
 											System.out.println();
 											point += 30;
 										} else {
@@ -345,7 +345,7 @@ public class Game_Main {
 												if (hint_an.equals(dao.Easy_Ballad.get(ran[j]).getTitle())) {
 													System.out.println();
 													System.out.println("정답이야!!");
-													System.out.println("다음 곡도 맞출 수 있지?");
+													System.out.println("다음 곡도 맞힐 수 있지?");
 													point += 30;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
@@ -438,7 +438,7 @@ public class Game_Main {
 										String userAnswer = sc.next();
 										if (userAnswer.equals(dao.Easy_Ballad.get(ran[j]).getTitle())) {
 											System.out.println("정답이야!!");
-											System.out.println("다음 곡도 맞출 수 있지?");
+											System.out.println("다음 곡도 맞힐 수 있지?");
 											System.out.println();
 											battpoint += 30;
 										} else {
@@ -526,7 +526,7 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
 
-								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
+								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞혔어?");
 								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
 								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
@@ -588,7 +588,7 @@ public class Game_Main {
 										String userAnswer = sc.next();
 										if (userAnswer.equals(dao.Hard_Ballad.get(ran[j]).getTitle())) {
 											System.out.println("정답이야!!");
-											System.out.println("다음 곡도 맞출 수 있지?");
+											System.out.println("다음 곡도 맞힐 수 있지?");
 											System.out.println();
 											point += 60;
 										} else {
@@ -614,7 +614,7 @@ public class Game_Main {
 												String hint_an = sc.next();
 												if (hint_an.equals(dao.Hard_Ballad.get(ran[j]).getTitle())) {
 													System.out.println("정답이야!!");
-													System.out.println("다음 곡도 맞출 수 있지?");
+													System.out.println("다음 곡도 맞힐 수 있지?");
 													System.out.println();
 													point += 60;
 												} else {
@@ -707,7 +707,7 @@ public class Game_Main {
 										String userAnswer = sc.next();
 										if (userAnswer.equals(dao.Hard_Ballad.get(ran[j]).getTitle())) {
 											System.out.println("정답이야!!");
-											System.out.println("다음 곡도 맞출 수 있지?");
+											System.out.println("다음 곡도 맞힐 수 있지?");
 											System.out.println();
 											battpoint += 60;
 										} else {
@@ -733,7 +733,7 @@ public class Game_Main {
 												String hint_an = sc.next();
 												if (hint_an.equals(dao.Hard_Ballad.get(ran[j]).getTitle())) {
 													System.out.println("정답이야!!");
-													System.out.println("다음 곡도 맞출 수 있지?");
+													System.out.println("다음 곡도 맞힐 수 있지?");
 													System.out.println();
 													battpoint += 60;
 												} else {
@@ -796,7 +796,7 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
 
-								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
+								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞혔어?");
 								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
 								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
@@ -857,7 +857,7 @@ public class Game_Main {
 										String userAnswer = sc.next();
 										if (userAnswer.equals(dao.Easy_Dance.get(ran[j]).getTitle())) {
 											System.out.println("정답이야!!");
-											System.out.println("다음 곡도 맞출 수 있지?");
+											System.out.println("다음 곡도 맞힐 수 있지?");
 											System.out.println();
 											point += 30;
 										} else {
@@ -883,7 +883,7 @@ public class Game_Main {
 												String hint_an = sc.next();
 												if (hint_an.equals(dao.Easy_Dance.get(ran[j]).getTitle())) {
 													System.out.println("정답이야!!");
-													System.out.println("다음 곡도 맞출 수 있지?");
+													System.out.println("다음 곡도 맞힐 수 있지?");
 													point += 30;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
@@ -977,7 +977,7 @@ public class Game_Main {
 										String userAnswer = sc.next();
 										if (userAnswer.equals(dao.Easy_Dance.get(ran[j]).getTitle())) {
 											System.out.println("정답이야!!");
-											System.out.println("다음 곡도 맞출 수 있지?");
+											System.out.println("다음 곡도 맞힐 수 있지?");
 											System.out.println();
 											battpoint += 30;
 										} else {
@@ -1003,7 +1003,7 @@ public class Game_Main {
 												String hint_an = sc.next();
 												if (hint_an.equals(dao.Easy_Dance.get(ran[j]).getTitle())) {
 													System.out.println("정답이야!!");
-													System.out.println("다음 곡도 맞출 수 있지?");
+													System.out.println("다음 곡도 맞힐 수 있지?");
 													System.out.println();
 													battpoint += 30;
 												} else {
@@ -1065,7 +1065,7 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⡏⠁⠀⠀⠙⣿⣿⣿⠉⠁⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
-								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
+								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞혔어?");
 								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
 								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
@@ -1126,7 +1126,7 @@ public class Game_Main {
 										String userAnswer = sc.next();
 										if (userAnswer.equals(dao.Hard_Dance.get(ran[j]).getTitle())) {
 											System.out.println("정답이야!!");
-											System.out.println("다음 곡도 맞출 수 있지?");
+											System.out.println("다음 곡도 맞힐 수 있지?");
 											System.out.println();
 											point += 60;
 										} else {
@@ -1152,7 +1152,7 @@ public class Game_Main {
 												String hint_an = sc.next();
 												if (hint_an.equals(dao.Hard_Dance.get(ran[j]).getTitle())) {
 													System.out.println("정답이야!!");
-													System.out.println("다음 곡도 맞출 수 있지?");
+													System.out.println("다음 곡도 맞힐 수 있지?");
 													System.out.println();
 													point += 60;
 												} else {
@@ -1247,7 +1247,7 @@ public class Game_Main {
 										String userAnswer = sc.next();
 										if (userAnswer.equals(dao.Hard_Dance.get(ran[j]).getTitle())) {
 											System.out.println("정답이야!!");
-											System.out.println("다음 곡도 맞출 수 있지?");
+											System.out.println("다음 곡도 맞힐 수 있지?");
 											System.out.println();
 											battpoint += 60;
 										} else {
@@ -1334,7 +1334,7 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⡏⠁⠀⠀⠙⣿⣿⣿⠉⠁⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
-								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
+								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞혔어?");
 								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
 								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
@@ -1394,7 +1394,7 @@ public class Game_Main {
 										String userAnswer = sc.next();
 										if (userAnswer.equals(dao.Easy_Hiphop.get(ran[j]).getTitle())) {
 											System.out.println("정답이야!!");
-											System.out.println("다음 곡도 맞출 수 있지?");
+											System.out.println("다음 곡도 맞힐 수 있지?");
 											System.out.println();
 											point += 30;
 										} else {
@@ -1420,7 +1420,7 @@ public class Game_Main {
 												String hint_an = sc.next();
 												if (hint_an.equals(dao.Easy_Hiphop.get(ran[j]).getTitle())) {
 													System.out.println("정답이야!!");
-													System.out.println("다음 곡도 맞출 수 있지?");
+													System.out.println("다음 곡도 맞힐 수 있지?");
 													System.out.println();
 													point += 30;
 												} else {
@@ -1515,7 +1515,7 @@ public class Game_Main {
 										String userAnswer = sc.next();
 										if (userAnswer.equals(dao.Easy_Hiphop.get(ran[j]).getTitle())) {
 											System.out.println("정답이야!!");
-											System.out.println("다음 곡도 맞출 수 있지?");
+											System.out.println("다음 곡도 맞힐 수 있지?");
 											System.out.println();
 											battpoint += 30;
 										} else {
@@ -1541,7 +1541,7 @@ public class Game_Main {
 												String hint_an = sc.next();
 												if (hint_an.equals(dao.Easy_Hiphop.get(ran[j]).getTitle())) {
 													System.out.println("정답이야!!");
-													System.out.println("다음 곡도 맞출 수 있지?");
+													System.out.println("다음 곡도 맞힐 수 있지?");
 													System.out.println();
 													battpoint += 30;
 												} else {
@@ -1604,7 +1604,7 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⡏⠁⠀⠀⠙⣿⣿⣿⠉⠁⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
-								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
+								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞혔어?");
 								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
 								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
@@ -1664,7 +1664,7 @@ public class Game_Main {
 										String userAnswer = sc.next();
 										if (userAnswer.equals(dao.Hard_Hiphop.get(ran[j]).getTitle())) {
 											System.out.println("정답이야!!");
-											System.out.println("다음 곡도 맞출 수 있지?");
+											System.out.println("다음 곡도 맞힐 수 있지?");
 											System.out.println();
 											point += 60;
 										} else {
@@ -1690,7 +1690,7 @@ public class Game_Main {
 												String hint_an = sc.next();
 												if (hint_an.equals(dao.Hard_Hiphop.get(ran[j]).getTitle())) {
 													System.out.println("정답이야!!");
-													System.out.println("다음 곡도 맞출 수 있지?");
+													System.out.println("다음 곡도 맞힐 수 있지?");
 													point += 60;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
@@ -1784,7 +1784,7 @@ public class Game_Main {
 										String userAnswer = sc.next();
 										if (userAnswer.equals(dao.Hard_Hiphop.get(ran[j]).getTitle())) {
 											System.out.println("정답이야!!");
-											System.out.println("다음 곡도 맞출 수 있지?");
+											System.out.println("다음 곡도 맞힐 수 있지?");
 											System.out.println();
 											battpoint += 60;
 										} else {
@@ -1810,7 +1810,7 @@ public class Game_Main {
 												String hint_an = sc.next();
 												if (hint_an.equals(dao.Hard_Hiphop.get(ran[j]).getTitle())) {
 													System.out.println("정답이야!!");
-													System.out.println("다음 곡도 맞출 수 있지?");
+													System.out.println("다음 곡도 맞힐 수 있지?");
 													System.out.println();
 													battpoint += 60;
 												} else {
@@ -1872,7 +1872,7 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⡏⠁⠀⠀⠙⣿⣿⣿⠉⠁⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
-								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
+								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞혔어?");
 								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
 								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
