@@ -210,7 +210,9 @@ public class DAO {
 		
 		System.out.print("배팅 point : ");
 		int battpoint = sc.nextInt();
-		if ( battpoint <= point) {
+		
+			if( battpoint <= point) {
+		
 		
 		try {
             psmt = conn.prepareStatement(sql);
@@ -285,6 +287,7 @@ public class DAO {
                System.out.println();
                System.out.println();
                return battpoint * 2 ;
+               
             }else {
                System.out.println("의문의 목소리 : 하하, 틀렸잖아? 정답은 " + "<"+answer+ ">" + "이었(였)다고.");
                System.out.println("의문의 목소리 : 네 포인트는 내가 가져가도록 하지.");
@@ -357,9 +360,11 @@ public class DAO {
 		System.out.println("의문의 목소리가 속삭인다....이런... 욕심이 과했군.....");
 		return point;
 		}
-		return point;
+			return point;
+		}
+	
 		
-	}
+	
 	
 	
 	//중복제거
