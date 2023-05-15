@@ -520,11 +520,15 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
 
-								System.out.println("동료를 모으는 게임이 끝났습니다.");
-								System.out.println("당신의 점수는 : " + point + "입니다.");
+								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
+								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
+								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
+								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
 								System.out.println();
+								System.out.println("당신의 점수는 : " + point + "입니다.");
 								dao.End(id, point);
 								System.out.println();
+								
 								System.out.println("==================== 전체 랭킹 ====================");
 								ArrayList<PlayerDTO> List = dao.Ranking();
 								for (int i = 0; i < List.size(); i++) {
@@ -782,7 +786,11 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
 
-								System.out.println("동료를 모으는 게임이 끝났습니다.");
+								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
+								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
+								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
+								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
+								System.out.println();
 								System.out.println("당신의 점수는 : " + point + "입니다.");
 
 								System.out.println();
@@ -1044,10 +1052,12 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⡏⠁⠀⠀⠙⣿⣿⣿⠉⠁⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
-								System.out.println("동료를 모으는 게임이 끝났습니다.");
-								System.out.println("당신의 점수는 : " + point + "입니다.");
-
+								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
+								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
+								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
+								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
 								System.out.println();
+								System.out.println("당신의 점수는 : " + point + "입니다.");
 								dao.End(id, point);
 								System.out.println();
 								System.out.println("==================== 전체 랭킹 ====================");
@@ -1307,10 +1317,12 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⡏⠁⠀⠀⠙⣿⣿⣿⠉⠁⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
-								System.out.println("동료를 모으는 게임이 끝났습니다.");
-								System.out.println("당신의 점수는 : " + point + "입니다.");
-
+								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
+								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
+								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
+								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
 								System.out.println();
+								System.out.println("당신의 점수는 : " + point + "입니다.");
 								dao.End(id, point);
 								System.out.println();
 								System.out.println("==================== 전체 랭킹 ====================");
@@ -1569,10 +1581,12 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⡏⠁⠀⠀⠙⣿⣿⣿⠉⠁⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
-								System.out.println("동료를 모으는 게임이 끝났습니다.");
-								System.out.println("당신의 점수는 : " + point + "입니다.");
-
+								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
+								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
+								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
+								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
 								System.out.println();
+								System.out.println("당신의 점수는 : " + point + "입니다.");
 								dao.End(id, point);
 								System.out.println();
 								System.out.println("==================== 전체 랭킹 ====================");
@@ -1831,10 +1845,12 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⡏⠁⠀⠀⠙⣿⣿⣿⠉⠁⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
-								System.out.println("동료를 모으는 게임이 끝났습니다.");
-								System.out.println("당신의 점수는 : " + point + "입니다.");
-
+								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
+								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
+								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
+								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
 								System.out.println();
+								System.out.println("당신의 점수는 : " + point + "입니다.");
 								dao.End(id, point);
 								System.out.println();
 								System.out.println("==================== 전체 랭킹 ====================");
