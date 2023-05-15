@@ -166,7 +166,6 @@ public class DAO {
 	public int bonus(int point) {
 
 		getConn();
-		int battpoint = sc.nextInt();
 		int ran = rn.nextInt(10) + 1;
 		String sql = "select * from bonus where qsnumber = ? ";
 		System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
@@ -210,6 +209,7 @@ public class DAO {
 		System.out.println();
 		
 		System.out.print("배팅 point : ");
+		int battpoint = sc.nextInt();
 		if ( battpoint >= point) {
 		
 		try {
