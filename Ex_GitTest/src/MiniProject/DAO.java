@@ -210,7 +210,7 @@ public class DAO {
 		
 		System.out.print("배팅 point : ");
 		int battpoint = sc.nextInt();
-		if ( battpoint >= point) {
+		if ( battpoint <= point) {
 		
 		try {
             psmt = conn.prepareStatement(sql);
