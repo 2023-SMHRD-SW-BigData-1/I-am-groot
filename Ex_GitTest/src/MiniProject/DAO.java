@@ -212,7 +212,7 @@ public class DAO {
 		int battpoint = sc.nextInt();
 		
 			if( battpoint <= point) {
-		
+				point -= battpoint;  
 		
 		try {
             psmt = conn.prepareStatement(sql);
@@ -286,7 +286,7 @@ public class DAO {
                System.out.println();
                System.out.println();
                System.out.println();
-               return battpoint * 2 ;
+               return (point - battpoint) * 2 ;
                
             }else {
                System.out.println("의문의 목소리 : 하하, 틀렸잖아? 정답은 " + "<"+answer+ ">" + "이었(였)다고.");
@@ -346,7 +346,7 @@ public class DAO {
                 		+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
                 		+ "");
                
-                return battpoint = 0;
+                return (point + (battpoint = 0));
             }
 		
 
