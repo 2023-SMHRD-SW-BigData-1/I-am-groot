@@ -243,7 +243,7 @@ public class DAO {
                System.out.println("멀어져가는 의식 속에서 어렴풋이 포인트를 얻었다는 소리가 들리는 듯하다.");
                System.out.println();
                System.out.println("당신은" + battpoint * 2 + "point를 획득하였습니다.");
-               point += battpoint;
+              
                System.out.println();
                System.out.println();
                System.out.println();
@@ -285,7 +285,7 @@ public class DAO {
                System.out.println();
                System.out.println();
                System.out.println();
-
+               return battpoint * 2 ;
             }else {
                System.out.println("의문의 목소리 : 하하, 틀렸잖아? 정답은 " + "<"+answer+ ">" + "이었(였)다고.");
                System.out.println("의문의 목소리 : 네 포인트는 내가 가져가도록 하지.");
@@ -344,7 +344,7 @@ public class DAO {
                 		+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
                 		+ "");
                
-            
+                return battpoint = 0;
             }
 
             
@@ -355,7 +355,7 @@ public class DAO {
          
 		
 		
-         return point;
+         return 0;
 	}
 	
 	

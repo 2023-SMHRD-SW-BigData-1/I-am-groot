@@ -9,6 +9,7 @@ import javazoom.jl.player.MP3Player;
 public class Music { 
 	String conPath = "C:\\\\Users\\\\smhrd\\\\Desktop\\\\workspace\\\\GitTest2\\\\src\\\\"; // 여기도 플레이하는 컴퓨터 경로 보고 수동적으로 수정
     ArrayList<String> MusicList = new ArrayList<>();
+    MP3Player mp3 = new MP3Player();
     public void balladeS() { // 메소드 이름 파일명에 맞게 수동적으로 수정
        int[] num = new int [6];
        int[] num2 = new int[6];
@@ -16,6 +17,16 @@ public class Music {
        Random rn = new Random();
        MP3Player mp3 = new MP3Player();
        int ran = rn.nextInt(6) ; // 6문제 이므로 6개까지 출력 
+  
+       
+       
+       
+       
+       
+       
+       
+       
+       
        
     MusicList.add((conPath+"balladeS\\ANTIFRAGILE.mp3"));  // 파일명과 음악 명칭 맞게 수동적으로 수정
     MusicList.add((conPath+"balladeS\\Cupid.mp3"));  

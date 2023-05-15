@@ -16,6 +16,7 @@ public class Game_Main {
 		int choiceLevel = 0;
 		Music m = new Music();
 		MP3Player mp3 = new MP3Player();
+		int battpoint = 0;
 		int[] ran = new int[10];
 		for (int a = 0; a < 10; a++) {
 			ran[a] = rd.nextInt(10);
@@ -31,7 +32,7 @@ public class Game_Main {
 		int hintCount = 1;
 
 		// 게임시작 전 선택 페이지
-
+		
 		System.out.println(
 
 				"\r\n" + ".___  ___.  __    __       _______. __    ______      _______      ___      .___  ___.  _______ \r\n"
@@ -359,6 +360,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 15;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -387,11 +389,11 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								dao.bonus(point);
+								battpoint += dao.bonus(point); 
 
 								// 다시 3문제 시작
 								// ============================================================================================
-								for (int j = 4; j < 6; j++) {
+								for (int j = 4; j < 7; j++) {
 									System.out.println("노래를 재생하시려면 아무 키나 입력 후 엔터를 눌러주세요.");
 									String star = sc.next();
 									System.out.println();
@@ -435,7 +437,7 @@ public class Game_Main {
 											System.out.println("정답이야!!");
 											System.out.println("다음 곡도 맞출 수 있지?");
 											System.out.println();
-											point += 30;
+											battpoint += 30;
 										} else {
 											System.out.println("틀렸어..");
 											System.out.println(
@@ -460,7 +462,7 @@ public class Game_Main {
 												if (hint_an.equals(dao.Easy_Ballad.get(ran[j]).getTitle())) {
 													System.out.println();
 													System.out.println("정답입니다!! ");
-													point += 30;
+													battpoint += 30;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
 													System.out.println("\r\n"
@@ -475,13 +477,14 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													battpoint -= 15;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
 												System.out.println("위로하는 하신 : 남아있는 힌트가 없어...");
 												System.out.println();
 												System.out.println();
-												point -= 15;
+												battpoint -= 15;
 											} else {
 												if (j < 3) {
 													System.out.println("\r\n"
@@ -494,9 +497,9 @@ public class Game_Main {
 															+ "⣿⣿⣿⣿⠀⠀⠀⠀⠹⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⣿⣿⡿⠃⠀⠀⠻⣿⣿⣿⣷⡀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀⠀\r\n"
 															+ "");
 
-													point -= 15;
+													battpoint -= 15;
 												} else {
-													point -= 15;
+													battpoint -= 15;
 												}
 											}
 										}
@@ -520,11 +523,17 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
 
+<<<<<<< HEAD
 								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
 								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
 								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
+=======
+								System.out.println("동료를 모으는 게임이 끝났습니다.");
+								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 								System.out.println();
+<<<<<<< HEAD
 								System.out.println("당신의 점수는 : " + point + "입니다.");
 								dao.End(id, point);
 								System.out.println();
@@ -534,6 +543,10 @@ public class Game_Main {
 								for (int i = 0; i < List.size(); i++) {
 									System.out.println(List.get(i).getID() + " / " + List.get(i).getPOINT());}
 								System.out.println();
+=======
+								dao.End(id, battpoint);
+
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 								break;
 
 								// Hard_Ballad
@@ -624,6 +637,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 30;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -652,11 +666,11 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								dao.bonus(point);
+								battpoint += dao.bonus(point);
 
 								// 다시 3문제 시작
 								// ============================================================================================
-								for (int j = 4; j < 6; j++) {
+								for (int j = 4; j < 7; j++) {
 									System.out.println("노래를 재생하시려면 아무 키나 입력 후 엔터를 눌러주세요.");
 									String star = sc.next();
 									System.out.println();
@@ -700,7 +714,7 @@ public class Game_Main {
 											System.out.println("정답이야!!");
 											System.out.println("다음 곡도 맞출 수 있지?");
 											System.out.println();
-											point += 60;
+											battpoint += 60;
 										} else {
 											System.out.println("틀렸어..");
 											System.out.println(
@@ -726,7 +740,7 @@ public class Game_Main {
 													System.out.println("정답이야!!");
 													System.out.println("다음 곡도 맞출 수 있지?");
 													System.out.println();
-													point += 60;
+													battpoint += 60;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
 													System.out.println("\r\n"
@@ -741,13 +755,14 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													battpoint -= 30;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
 												System.out.println("위로하는 하신 : 남아있는 힌트가 없어...");
 												System.out.println();
 												System.out.println();
-												point -= 30;
+												battpoint -= 30;
 											} else {
 												if (j < 3) {
 													System.out.println("\r\n"
@@ -760,9 +775,9 @@ public class Game_Main {
 															+ "⣿⣿⣿⣿⠀⠀⠀⠀⠹⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⣿⣿⡿⠃⠀⠀⠻⣿⣿⣿⣷⡀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀⠀\r\n"
 															+ "");
 
-													point -= 30;
+													battpoint -= 30;
 												} else {
-													point -= 30;
+													battpoint -= 30;
 												}
 											}
 										}
@@ -786,14 +801,20 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
 
+<<<<<<< HEAD
 								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
 								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
 								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
 								System.out.println();
 								System.out.println("당신의 점수는 : " + point + "입니다.");
+=======
+								System.out.println("동료를 모으는 게임이 끝났습니다.");
+								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 
 								System.out.println();
+<<<<<<< HEAD
 								dao.End(id, point);
 								System.out.println();
 								System.out.println("==================== 전체 랭킹 ====================");
@@ -801,6 +822,9 @@ public class Game_Main {
 								for (int i = 0; i < List.size(); i++) {
 									System.out.println(List.get(i).getID() + " / " + List.get(i).getPOINT());}
 								System.out.println();
+=======
+								dao.End(id, battpoint);
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 								break;
 							}
 							// Easy_dance
@@ -890,6 +914,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 15;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -918,11 +943,11 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								dao.bonus(point);
+								battpoint += dao.bonus(point);
 
 								// 다시 3문제 시작
 								// ============================================================================================
-								for (int j = 4; j < 6; j++) {
+								for (int j = 4; j < 7; j++) {
 									System.out.println("노래를 재생하시려면 아무 키나 입력 후 엔터를 눌러주세요.");
 
 									String star = sc.next();
@@ -967,7 +992,7 @@ public class Game_Main {
 											System.out.println("정답이야!!");
 											System.out.println("다음 곡도 맞출 수 있지?");
 											System.out.println();
-											point += 30;
+											battpoint += 30;
 										} else {
 											System.out.println("틀렸어..");
 											System.out.println(
@@ -993,7 +1018,7 @@ public class Game_Main {
 													System.out.println("정답이야!!");
 													System.out.println("다음 곡도 맞출 수 있지?");
 													System.out.println();
-													point += 30;
+													battpoint += 30;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
 													System.out.println("\r\n"
@@ -1008,6 +1033,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 15;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -1052,11 +1078,18 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⡏⠁⠀⠀⠙⣿⣿⣿⠉⠁⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
+<<<<<<< HEAD
 								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
 								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
 								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
+=======
+								System.out.println("동료를 모으는 게임이 끝났습니다.");
+								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
+
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 								System.out.println();
+<<<<<<< HEAD
 								System.out.println("당신의 점수는 : " + point + "입니다.");
 								dao.End(id, point);
 								System.out.println();
@@ -1065,6 +1098,9 @@ public class Game_Main {
 								for (int i = 0; i < List.size(); i++) {
 									System.out.println(List.get(i).getID() + " / " + List.get(i).getPOINT());}
 								System.out.println();
+=======
+								dao.End(id, battpoint);
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 								break;
 
 								// Hard_Dance
@@ -1156,6 +1192,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 30;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -1184,11 +1221,11 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								dao.bonus(point);
+								battpoint += dao.bonus(point);
 
 								// 다시 3문제 시작
 								// ============================================================================================
-								for (int j = 4; j < 6; j++) {
+								for (int j = 4; j < 7; j++) {
 									System.out.println("노래를 재생하시려면 아무 키나 입력 후 엔터를 눌러주세요.");
 
 									String star = sc.next();
@@ -1233,7 +1270,7 @@ public class Game_Main {
 											System.out.println("정답이야!!");
 											System.out.println("다음 곡도 맞출 수 있지?");
 											System.out.println();
-											point += 60;
+											battpoint += 60;
 										} else {
 											System.out.println("틀렸어..");
 											System.out.println(
@@ -1258,7 +1295,7 @@ public class Game_Main {
 												if (hint_an.equals(dao.Hard_Dance.get(ran[j]).getTitle())) {
 													System.out.println();
 													System.out.println("정답입니다!! ");
-													point += 60;
+													battpoint += 60;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
 													System.out.println("\r\n"
@@ -1273,13 +1310,14 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													battpoint -= 30;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
 												System.out.println("위로하는 하신 : 남아있는 힌트가 없어...");
 												System.out.println();
 												System.out.println();
-												point -= 30;
+												battpoint -= 30;
 											} else {
 												if (j < 3) {
 													System.out.println("\r\n"
@@ -1292,9 +1330,9 @@ public class Game_Main {
 															+ "⣿⣿⣿⣿⠀⠀⠀⠀⠹⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⣿⣿⡿⠃⠀⠀⠻⣿⣿⣿⣷⡀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀⠀\r\n"
 															+ "");
 
-													point -= 30;
+													battpoint -= 30;
 												} else {
-													point -= 30;
+													battpoint -= 30;
 												}
 											}
 										}
@@ -1317,11 +1355,18 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⡏⠁⠀⠀⠙⣿⣿⣿⠉⠁⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
+<<<<<<< HEAD
 								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
 								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
 								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
+=======
+								System.out.println("동료를 모으는 게임이 끝났습니다.");
+								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
+
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 								System.out.println();
+<<<<<<< HEAD
 								System.out.println("당신의 점수는 : " + point + "입니다.");
 								dao.End(id, point);
 								System.out.println();
@@ -1330,6 +1375,9 @@ public class Game_Main {
 								for (int i = 0; i < List.size(); i++) {
 									System.out.println(List.get(i).getID() + " / " + List.get(i).getPOINT());}
 								System.out.println();
+=======
+								dao.End(id, battpoint);
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 								break;
 								// Easy_Hiphop
 								// =================================================================================================
@@ -1419,6 +1467,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 15;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -1447,11 +1496,11 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								dao.bonus(point);
+								battpoint += dao.bonus(point);
 
 								// 다시 3문제 시작
 								// ============================================================================================
-								for (int j = 4; j < 6; j++) {
+								for (int j = 4; j < 7; j++) {
 									System.out.println("노래를 재생하시려면 아무 키나 입력 후 엔터를 눌러주세요.");
 
 									String star = sc.next();
@@ -1496,7 +1545,7 @@ public class Game_Main {
 											System.out.println("정답이야!!");
 											System.out.println("다음 곡도 맞출 수 있지?");
 											System.out.println();
-											point += 30;
+											battpoint += 30;
 										} else {
 											System.out.println("틀렸어..");
 											System.out.println(
@@ -1522,7 +1571,7 @@ public class Game_Main {
 													System.out.println("정답이야!!");
 													System.out.println("다음 곡도 맞출 수 있지?");
 													System.out.println();
-													point += 30;
+													battpoint += 30;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
 													System.out.println("\r\n"
@@ -1537,13 +1586,15 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													battpoint -= 15;
+															
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
 												System.out.println("위로하는 하신 : 남아있는 힌트가 없어...");
 												System.out.println();
 												System.out.println();
-												point -= 15;
+												battpoint -= 15;
 											} else {
 												if (j < 3) {
 													System.out.println("\r\n"
@@ -1556,9 +1607,9 @@ public class Game_Main {
 															+ "⣿⣿⣿⣿⠀⠀⠀⠀⠹⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⣿⣿⡿⠃⠀⠀⠻⣿⣿⣿⣷⡀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀⠀\r\n"
 															+ "");
 
-													point -= 15;
+													battpoint -= 15;
 												} else {
-													point -= 15;
+													battpoint -= 15;
 												}
 											}
 										}
@@ -1581,11 +1632,18 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⡏⠁⠀⠀⠙⣿⣿⣿⠉⠁⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
+<<<<<<< HEAD
 								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
 								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
 								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
+=======
+								System.out.println("동료를 모으는 게임이 끝났습니다.");
+								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
+
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 								System.out.println();
+<<<<<<< HEAD
 								System.out.println("당신의 점수는 : " + point + "입니다.");
 								dao.End(id, point);
 								System.out.println();
@@ -1594,6 +1652,9 @@ public class Game_Main {
 								for (int i = 0; i < List.size(); i++) {
 									System.out.println(List.get(i).getID() + " / " + List.get(i).getPOINT());}
 								System.out.println();
+=======
+								dao.End(id, battpoint);
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 								break;
 								// Hard_Hiphop
 								// ============================================================================================
@@ -1683,6 +1744,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 30;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -1711,11 +1773,11 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								dao.bonus(point);
+								battpoint += dao.bonus(point);
 
 								// 다시 3문제 시작
 								// ============================================================================================
-								for (int j = 4; j < 6; j++) {
+								for (int j = 4; j < 7; j++) {
 									System.out.println("노래를 재생하시려면 아무 키나 입력 후 엔터를 눌러주세요.");
 
 									String star = sc.next();
@@ -1760,7 +1822,7 @@ public class Game_Main {
 											System.out.println("정답이야!!");
 											System.out.println("다음 곡도 맞출 수 있지?");
 											System.out.println();
-											point += 60;
+											battpoint += 60;
 										} else {
 											System.out.println("틀렸어..");
 											System.out.println(
@@ -1786,7 +1848,7 @@ public class Game_Main {
 													System.out.println("정답이야!!");
 													System.out.println("다음 곡도 맞출 수 있지?");
 													System.out.println();
-													point += 60;
+													battpoint += 60;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
 													System.out.println("\r\n"
@@ -1801,13 +1863,14 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													battpoint -= 30;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
 												System.out.println("위로하는 하신 : 남아있는 힌트가 없어...");
 												System.out.println();
 												System.out.println();
-												point -= 30;
+												battpoint -= 30;
 											} else {
 												if (j < 3) {
 													System.out.println("\r\n"
@@ -1820,9 +1883,9 @@ public class Game_Main {
 															+ "⣿⣿⣿⣿⠀⠀⠀⠀⠹⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⣿⣿⡿⠃⠀⠀⠻⣿⣿⣿⣷⡀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀⠀\r\n"
 															+ "");
 
-													point -= 30;
+													battpoint -= 30;
 												} else {
-													point -= 30;
+													battpoint -= 30;
 												}
 											}
 										}
@@ -1845,11 +1908,18 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⡏⠁⠀⠀⠙⣿⣿⣿⠉⠁⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
+<<<<<<< HEAD
 								System.out.println("신난 희주 : 안녕 플레이어! 제목은 많이 맞췄어?");
 								System.out.println("고생한 학성 : 내 주말을 갈아넣은 게임이 재밌었길 바라!");
 								System.out.println("능력자 하신 : 노래들은 마음에 들었어? 내가 골라봤는데 높은 포인트를 얻었을거라 믿어!");
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
+=======
+								System.out.println("동료를 모으는 게임이 끝났습니다.");
+								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
+
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 								System.out.println();
+<<<<<<< HEAD
 								System.out.println("당신의 점수는 : " + point + "입니다.");
 								dao.End(id, point);
 								System.out.println();
@@ -1858,6 +1928,9 @@ public class Game_Main {
 								for (int i = 0; i < List.size(); i++) {
 									System.out.println(List.get(i).getID() + " / " + List.get(i).getPOINT());}
 								System.out.println();
+=======
+								dao.End(id, battpoint);
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-BigData-1/i-am-groot.git
 								break;
 							}
 
