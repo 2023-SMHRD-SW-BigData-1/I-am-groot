@@ -175,10 +175,25 @@ public class DAO {
 				+ "  +#+    +#+     +#+    +#+      +#+  +#+#+#      +#+    +#+             +#+             +#+      +#+           +#+     +#+   +#+   +#+#      +#+            \r\n"
 				+ " #+#    #+#     #+#    #+#      #+#   #+#+#      #+#    #+#      #+#    #+#      #+#    #+#      #+#           #+#     #+#   #+#    #+#      #+#             \r\n"
 				+ "#########       ########       ###    ####       ########        ########        ########       ###           ###     ###    ########       ##########       ");
-		System.out.println("보너스 스테이지 도착 !!");
+
+		System.out.println();
+		System.out.println();
+		System.out.println("당신 : 읍읍!!");
+		System.out.println();
+		System.out.println("...어쩐지 긴 잠을 잔 후 눈을 뜬 것 같은 기분.");
+		System.out.println();
+		System.out.println("의문의 목소리 : 포인트는 많이 모았나?");
+		System.out.println("당신 : ...");
+		System.out.println("의문의 목소리 : 카지노는 처음이지?");
+		System.out.println();
 		System.out.println("승리시 배팅point의 2배를 획득 / 실패시 배팅point만큼 차감");
+		
 		System.out.println("현재 가지고 있는 포인트는 : " + point + " 입니다.");
-		System.out.println("보너스 스테이지는 무서운 곳이라 가지고 있는 포인트보다 더 큰 포인트를 넣으면 보너스 스테이지는 무효 입니다.");
+		System.out.println();
+		System.out.println("의문의 목소리 : 가지고 있는 포인트보다 더 큰 포인트를 넣으려는 시도는 생각도 마. 아주 큰 실수 하는 거라고.");
+		System.out.println("의문의 목소리가 후후, 하며 작게 웃는다.");
+		System.out.println();
+		System.out.println();
 		
 		System.out.print("배팅 point : ");
 		int battpoint = sc.nextInt();
@@ -213,14 +228,25 @@ public class DAO {
             System.out.print(rs.getString(1));
             String useranswer = sc.next();
             
+            System.out.println();
             if(useranswer.equals(answer)) {
-               System.out.println("정답입니다!");
+               System.out.println("의문의 목소리 : .. 답을 맞췄군.");
+               System.out.println("의문의 목소리 : 자, 이 포인트를 들고 썩 꺼지라고.");
+               System.out.println();
+               System.out.println("멀어져가는 의식 속에서 어렴풋이 포인트를 얻었다는 소리가 들리는 듯하다.");
+               System.out.println();
                System.out.println("당신은" + battpoint * 2 + "point를 획득하였습니다.");
                point += battpoint;
+               System.out.println();
             }else {
-               System.out.println("틀렸습니다. 정답은 " + answer + "입니다");
+               System.out.println("의문의 목소리 : 하하, 틀렸잖아? 정답은 " + "<"+answer+ ">" + "이었(였)다고.");
+               System.out.println("의문의 목소리 : 네 포인트는 내가 가져가도록 하지.");
+               System.out.println();
+               System.out.println("멀어져가는 의식 속에서 어렴풋이 포인트를 잃었다는 소리가 들리는 듯하다.");
+               System.out.println();
                System.out.println("당신은 " + battpoint + "point를 잃었습니다");
                 point -= battpoint;
+               System.out.println();
             
             }
 

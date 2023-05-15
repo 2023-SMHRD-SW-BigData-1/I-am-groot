@@ -10,11 +10,14 @@ public class Bonus_main {
 		int point = 0;
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("읍읍!!");
+		System.out.println("당신 : 읍읍!!");
+		System.out.println();
+		System.out.println("...어쩐지 긴 잠을 잔 후 눈을 뜬 것 같은 기분.");
 		System.out.println();
 		System.out.println("의문의 목소리 : 포인트는 많이 모았나?");
 		System.out.println("당신 : ...");
 		System.out.println("의문의 목소리 : 카지노는 처음이지?");
+		System.out.println();
 		System.out.println("승리시 배팅point의 2배를 획득 / 실패시 배팅point만큼 차감");
 
 		System.out.print("배팅 point : ");
