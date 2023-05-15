@@ -1294,7 +1294,7 @@ public class Game_Main {
 
 											} else if (hi.equals("hint") && hintCount == 0) {
 												System.out.println("위로하는 하신 : 남아있는 힌트가 없어...");
-												System.out.println();
+												System.out.println(); 
 												System.out.println();
 												battpoint -= 30;
 											} else {
