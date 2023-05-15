@@ -19,6 +19,8 @@ public class DAO {
 	ResultSet rs = null;
 	Random rd = new Random();
 	
+	Scanner sc = new Scanner(System.in);
+	Random rn = new Random();
 	 
 			
 	 
@@ -164,8 +166,7 @@ public class DAO {
 	public int bonus(int point) {
 
 		getConn();
-		Scanner sc = new Scanner(System.in);
-		Random rn = new Random();
+		int battpoint = sc.nextInt();
 		int ran = rn.nextInt(10) + 1;
 		String sql = "select * from bonus where qsnumber = ? ";
 		System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
@@ -209,10 +210,8 @@ public class DAO {
 		System.out.println();
 		
 		System.out.print("배팅 point : ");
-		int battpoint = sc.nextInt();
-		if(battpoint > point) {
-			System.out.println();
-		}
+		if ( battpoint >= point) {
+		
 		try {
             psmt = conn.prepareStatement(sql);
             psmt.setInt(1, ran);
@@ -346,6 +345,7 @@ public class DAO {
                
                 return battpoint = 0;
             }
+		
 
             
          }catch (Exception e) {
@@ -353,9 +353,12 @@ public class DAO {
             e.printStackTrace();
          }finally {getClose();}
          
+		}else {
+		System.out.println("의문의 목소리가 속삭인다....이런... 욕심이 과했군.....");
+		return point;
+		}
+		return point;
 		
-		
-         return 0;
 	}
 	
 	

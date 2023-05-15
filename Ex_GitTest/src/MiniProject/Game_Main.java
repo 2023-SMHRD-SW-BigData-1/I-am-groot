@@ -532,7 +532,7 @@ public class Game_Main {
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
 								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
 								System.out.println();
-								dao.End(id, point);
+								dao.End(id, battpoint);
 								System.out.println();
 								
 								System.out.println("==================== 전체 랭킹 ====================");
@@ -803,7 +803,7 @@ public class Game_Main {
 								System.out.println();
 								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
 								System.out.println();
-								dao.End(id, point);
+								dao.End(id, battpoint);
 								System.out.println();
 								System.out.println("==================== 전체 랭킹 ====================");
 								ArrayList<PlayerDTO> List = dao.Ranking();
@@ -1071,7 +1071,7 @@ public class Game_Main {
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
 								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
 								System.out.println();
-								dao.End(id, point);
+								dao.End(id, battpoint);
 								System.out.println();
 								System.out.println("==================== 전체 랭킹 ====================");
 								ArrayList<PlayerDTO> List = dao.Ranking();
@@ -1341,7 +1341,7 @@ public class Game_Main {
 								System.out.println("동료를 모으는 게임이 끝났습니다.");
 								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
 								System.out.println();
-								dao.End(id, point);
+								dao.End(id, battpoint);
 								System.out.println();
 								System.out.println("==================== 전체 랭킹 ====================");
 								ArrayList<PlayerDTO> List = dao.Ranking();
@@ -1610,7 +1610,7 @@ public class Game_Main {
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
 								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
 								System.out.println();
-								dao.End(id, point);
+								dao.End(id, battpoint);
 								System.out.println();
 								System.out.println("==================== 전체 랭킹 ====================");
 								ArrayList<PlayerDTO> List = dao.Ranking();
@@ -1878,7 +1878,7 @@ public class Game_Main {
 								System.out.println("잠 못 잔 민준 : ..머리 빠지는 줄 알았어요.");
 								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
 								System.out.println();
-								dao.End(id, point);
+								dao.End(id, battpoint);
 								System.out.println();
 								System.out.println("==================== 전체 랭킹 ====================");
 								ArrayList<PlayerDTO> List = dao.Ranking();
