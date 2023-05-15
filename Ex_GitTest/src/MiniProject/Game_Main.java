@@ -660,8 +660,9 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								battpoint += dao.bonus(point);
-
+								m.CBGM();
+								battpoint += dao.bonus(point); 
+								m.BGMend();
 								// 다시 3문제 시작
 								// ============================================================================================
 								for (int j = 4; j < 7; j++) {
@@ -927,7 +928,9 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								battpoint += dao.bonus(point);
+								m.CBGM();
+								battpoint += dao.bonus(point); 
+								m.BGMend();
 
 								// 다시 3문제 시작
 								// ============================================================================================
@@ -1195,7 +1198,9 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								battpoint += dao.bonus(point);
+								m.CBGM();
+								battpoint += dao.bonus(point); 
+								m.BGMend();
 
 								// 다시 3문제 시작
 								// ============================================================================================
@@ -1461,7 +1466,9 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								battpoint += dao.bonus(point);
+								m.CBGM();
+								battpoint += dao.bonus(point); 
+								m.BGMend();
 
 								// 다시 3문제 시작
 								// ============================================================================================
@@ -1728,7 +1735,9 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								battpoint += dao.bonus(point);
+								m.CBGM();
+								battpoint += dao.bonus(point); 
+								m.BGMend();
 
 								// 다시 3문제 시작
 								// ============================================================================================
