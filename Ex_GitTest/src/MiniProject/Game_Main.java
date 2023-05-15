@@ -16,6 +16,7 @@ public class Game_Main {
 		int choiceLevel = 0;
 		Music m = new Music();
 		MP3Player mp3 = new MP3Player();
+		int battpoint = 0;
 		int[] ran = new int[10];
 		for (int a = 0; a < 10; a++) {
 			ran[a] = rd.nextInt(10);
@@ -31,7 +32,7 @@ public class Game_Main {
 		int hintCount = 1;
 
 		// 게임시작 전 선택 페이지
-
+		
 		System.out.println(
 
 				"\r\n" + ".___  ___.  __    __       _______. __    ______      _______      ___      .___  ___.  _______ \r\n"
@@ -359,6 +360,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 15;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -387,11 +389,11 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								dao.bonus(point);
+								battpoint += dao.bonus(point); 
 
 								// 다시 3문제 시작
 								// ============================================================================================
-								for (int j = 4; j < 6; j++) {
+								for (int j = 4; j < 7; j++) {
 									System.out.println("노래를 재생하시려면 아무 키나 입력 후 엔터를 눌러주세요.");
 									String star = sc.next();
 									System.out.println();
@@ -435,7 +437,7 @@ public class Game_Main {
 											System.out.println("정답이야!!");
 											System.out.println("다음 곡도 맞출 수 있지?");
 											System.out.println();
-											point += 30;
+											battpoint += 30;
 										} else {
 											System.out.println("틀렸어..");
 											System.out.println(
@@ -460,7 +462,7 @@ public class Game_Main {
 												if (hint_an.equals(dao.Easy_Ballad.get(ran[j]).getTitle())) {
 													System.out.println();
 													System.out.println("정답입니다!! ");
-													point += 30;
+													battpoint += 30;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
 													System.out.println("\r\n"
@@ -475,13 +477,14 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													battpoint -= 15;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
 												System.out.println("위로하는 하신 : 남아있는 힌트가 없어...");
 												System.out.println();
 												System.out.println();
-												point -= 15;
+												battpoint -= 15;
 											} else {
 												if (j < 3) {
 													System.out.println("\r\n"
@@ -494,9 +497,9 @@ public class Game_Main {
 															+ "⣿⣿⣿⣿⠀⠀⠀⠀⠹⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⣿⣿⡿⠃⠀⠀⠻⣿⣿⣿⣷⡀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀⠀\r\n"
 															+ "");
 
-													point -= 15;
+													battpoint -= 15;
 												} else {
-													point -= 15;
+													battpoint -= 15;
 												}
 											}
 										}
@@ -521,9 +524,9 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
 
 								System.out.println("동료를 모으는 게임이 끝났습니다.");
-								System.out.println("당신의 점수는 : " + point + "입니다.");
+								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
 								System.out.println();
-								dao.End(id, point);
+								dao.End(id, battpoint);
 
 								break;
 
@@ -615,6 +618,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 30;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -643,11 +647,11 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								dao.bonus(point);
+								battpoint += dao.bonus(point);
 
 								// 다시 3문제 시작
 								// ============================================================================================
-								for (int j = 4; j < 6; j++) {
+								for (int j = 4; j < 7; j++) {
 									System.out.println("노래를 재생하시려면 아무 키나 입력 후 엔터를 눌러주세요.");
 									String star = sc.next();
 									System.out.println();
@@ -691,7 +695,7 @@ public class Game_Main {
 											System.out.println("정답이야!!");
 											System.out.println("다음 곡도 맞출 수 있지?");
 											System.out.println();
-											point += 60;
+											battpoint += 60;
 										} else {
 											System.out.println("틀렸어..");
 											System.out.println(
@@ -717,7 +721,7 @@ public class Game_Main {
 													System.out.println("정답이야!!");
 													System.out.println("다음 곡도 맞출 수 있지?");
 													System.out.println();
-													point += 60;
+													battpoint += 60;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
 													System.out.println("\r\n"
@@ -732,13 +736,14 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													battpoint -= 30;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
 												System.out.println("위로하는 하신 : 남아있는 힌트가 없어...");
 												System.out.println();
 												System.out.println();
-												point -= 30;
+												battpoint -= 30;
 											} else {
 												if (j < 3) {
 													System.out.println("\r\n"
@@ -751,9 +756,9 @@ public class Game_Main {
 															+ "⣿⣿⣿⣿⠀⠀⠀⠀⠹⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⣿⣿⡿⠃⠀⠀⠻⣿⣿⣿⣷⡀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀⠀\r\n"
 															+ "");
 
-													point -= 30;
+													battpoint -= 30;
 												} else {
-													point -= 30;
+													battpoint -= 30;
 												}
 											}
 										}
@@ -778,10 +783,10 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
 
 								System.out.println("동료를 모으는 게임이 끝났습니다.");
-								System.out.println("당신의 점수는 : " + point + "입니다.");
+								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
 
 								System.out.println();
-								dao.End(id, point);
+								dao.End(id, battpoint);
 								break;
 							}
 							// Easy_dance
@@ -871,6 +876,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 15;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -899,11 +905,11 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								dao.bonus(point);
+								battpoint += dao.bonus(point);
 
 								// 다시 3문제 시작
 								// ============================================================================================
-								for (int j = 4; j < 6; j++) {
+								for (int j = 4; j < 7; j++) {
 									System.out.println("노래를 재생하시려면 아무 키나 입력 후 엔터를 눌러주세요.");
 
 									String star = sc.next();
@@ -948,7 +954,7 @@ public class Game_Main {
 											System.out.println("정답이야!!");
 											System.out.println("다음 곡도 맞출 수 있지?");
 											System.out.println();
-											point += 30;
+											battpoint += 30;
 										} else {
 											System.out.println("틀렸어..");
 											System.out.println(
@@ -974,7 +980,7 @@ public class Game_Main {
 													System.out.println("정답이야!!");
 													System.out.println("다음 곡도 맞출 수 있지?");
 													System.out.println();
-													point += 30;
+													battpoint += 30;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
 													System.out.println("\r\n"
@@ -989,6 +995,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 15;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -1034,10 +1041,10 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
 								System.out.println("동료를 모으는 게임이 끝났습니다.");
-								System.out.println("당신의 점수는 : " + point + "입니다.");
+								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
 
 								System.out.println();
-								dao.End(id, point);
+								dao.End(id, battpoint);
 								break;
 
 								// Hard_Dance
@@ -1129,6 +1136,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 30;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -1157,11 +1165,11 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								dao.bonus(point);
+								battpoint += dao.bonus(point);
 
 								// 다시 3문제 시작
 								// ============================================================================================
-								for (int j = 4; j < 6; j++) {
+								for (int j = 4; j < 7; j++) {
 									System.out.println("노래를 재생하시려면 아무 키나 입력 후 엔터를 눌러주세요.");
 
 									String star = sc.next();
@@ -1206,7 +1214,7 @@ public class Game_Main {
 											System.out.println("정답이야!!");
 											System.out.println("다음 곡도 맞출 수 있지?");
 											System.out.println();
-											point += 60;
+											battpoint += 60;
 										} else {
 											System.out.println("틀렸어..");
 											System.out.println(
@@ -1231,7 +1239,7 @@ public class Game_Main {
 												if (hint_an.equals(dao.Hard_Dance.get(ran[j]).getTitle())) {
 													System.out.println();
 													System.out.println("정답입니다!! ");
-													point += 60;
+													battpoint += 60;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
 													System.out.println("\r\n"
@@ -1246,13 +1254,14 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													battpoint -= 30;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
 												System.out.println("위로하는 하신 : 남아있는 힌트가 없어...");
 												System.out.println();
 												System.out.println();
-												point -= 30;
+												battpoint -= 30;
 											} else {
 												if (j < 3) {
 													System.out.println("\r\n"
@@ -1265,9 +1274,9 @@ public class Game_Main {
 															+ "⣿⣿⣿⣿⠀⠀⠀⠀⠹⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⣿⣿⡿⠃⠀⠀⠻⣿⣿⣿⣷⡀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀⠀\r\n"
 															+ "");
 
-													point -= 30;
+													battpoint -= 30;
 												} else {
-													point -= 30;
+													battpoint -= 30;
 												}
 											}
 										}
@@ -1291,10 +1300,10 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
 								System.out.println("동료를 모으는 게임이 끝났습니다.");
-								System.out.println("당신의 점수는 : " + point + "입니다.");
+								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
 
 								System.out.println();
-								dao.End(id, point);
+								dao.End(id, battpoint);
 								break;
 								// Easy_Hiphop
 								// =================================================================================================
@@ -1384,6 +1393,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 15;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -1412,11 +1422,11 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								dao.bonus(point);
+								battpoint += dao.bonus(point);
 
 								// 다시 3문제 시작
 								// ============================================================================================
-								for (int j = 4; j < 6; j++) {
+								for (int j = 4; j < 7; j++) {
 									System.out.println("노래를 재생하시려면 아무 키나 입력 후 엔터를 눌러주세요.");
 
 									String star = sc.next();
@@ -1461,7 +1471,7 @@ public class Game_Main {
 											System.out.println("정답이야!!");
 											System.out.println("다음 곡도 맞출 수 있지?");
 											System.out.println();
-											point += 30;
+											battpoint += 30;
 										} else {
 											System.out.println("틀렸어..");
 											System.out.println(
@@ -1487,7 +1497,7 @@ public class Game_Main {
 													System.out.println("정답이야!!");
 													System.out.println("다음 곡도 맞출 수 있지?");
 													System.out.println();
-													point += 30;
+													battpoint += 30;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
 													System.out.println("\r\n"
@@ -1502,13 +1512,15 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													battpoint -= 15;
+															
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
 												System.out.println("위로하는 하신 : 남아있는 힌트가 없어...");
 												System.out.println();
 												System.out.println();
-												point -= 15;
+												battpoint -= 15;
 											} else {
 												if (j < 3) {
 													System.out.println("\r\n"
@@ -1521,9 +1533,9 @@ public class Game_Main {
 															+ "⣿⣿⣿⣿⠀⠀⠀⠀⠹⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⣿⣿⡿⠃⠀⠀⠻⣿⣿⣿⣷⡀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀⠀\r\n"
 															+ "");
 
-													point -= 15;
+													battpoint -= 15;
 												} else {
-													point -= 15;
+													battpoint -= 15;
 												}
 											}
 										}
@@ -1547,10 +1559,10 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
 								System.out.println("동료를 모으는 게임이 끝났습니다.");
-								System.out.println("당신의 점수는 : " + point + "입니다.");
+								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
 
 								System.out.println();
-								dao.End(id, point);
+								dao.End(id, battpoint);
 								break;
 								// Hard_Hiphop
 								// ============================================================================================
@@ -1640,6 +1652,7 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													point -= 30;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
@@ -1668,11 +1681,11 @@ public class Game_Main {
 									}
 								}
 								// 3문제 끝나고 보너스 스테이지
-								dao.bonus(point);
+								battpoint += dao.bonus(point);
 
 								// 다시 3문제 시작
 								// ============================================================================================
-								for (int j = 4; j < 6; j++) {
+								for (int j = 4; j < 7; j++) {
 									System.out.println("노래를 재생하시려면 아무 키나 입력 후 엔터를 눌러주세요.");
 
 									String star = sc.next();
@@ -1717,7 +1730,7 @@ public class Game_Main {
 											System.out.println("정답이야!!");
 											System.out.println("다음 곡도 맞출 수 있지?");
 											System.out.println();
-											point += 60;
+											battpoint += 60;
 										} else {
 											System.out.println("틀렸어..");
 											System.out.println(
@@ -1743,7 +1756,7 @@ public class Game_Main {
 													System.out.println("정답이야!!");
 													System.out.println("다음 곡도 맞출 수 있지?");
 													System.out.println();
-													point += 60;
+													battpoint += 60;
 												} else {
 													System.out.println("실망한 민준 : 힌트는 한 번밖에 없는데 이걸 틀리다니.. 유감이야.. ");
 													System.out.println("\r\n"
@@ -1758,13 +1771,14 @@ public class Game_Main {
 													System.out.println();
 													System.out.println();
 													System.out.println();
+													battpoint -= 30;
 												}
 
 											} else if (hi.equals("hint") && hintCount == 0) {
 												System.out.println("위로하는 하신 : 남아있는 힌트가 없어...");
 												System.out.println();
 												System.out.println();
-												point -= 30;
+												battpoint -= 30;
 											} else {
 												if (j < 3) {
 													System.out.println("\r\n"
@@ -1777,9 +1791,9 @@ public class Game_Main {
 															+ "⣿⣿⣿⣿⠀⠀⠀⠀⠹⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣴⣿⣿⣿⡿⠃⠀⠀⠻⣿⣿⣿⣷⡀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀⠀\r\n"
 															+ "");
 
-													point -= 30;
+													battpoint -= 30;
 												} else {
-													point -= 30;
+													battpoint -= 30;
 												}
 											}
 										}
@@ -1803,10 +1817,10 @@ public class Game_Main {
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 										+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
 								System.out.println("동료를 모으는 게임이 끝났습니다.");
-								System.out.println("당신의 점수는 : " + point + "입니다.");
+								System.out.println("당신의 점수는 : " + battpoint + "입니다.");
 
 								System.out.println();
-								dao.End(id, point);
+								dao.End(id, battpoint);
 								break;
 							}
 
