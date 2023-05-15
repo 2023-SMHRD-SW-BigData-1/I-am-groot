@@ -97,7 +97,7 @@ public class Game_Main {
 				} else if (input == 2) {
 					System.out.println();
 					System.out.println();
-					System.out.println("===== 동료가 맞는지 확인하겠다! =====");
+					System.out.println("===== 동료가 맞는지 확인할게! =====");
 					System.out.print("네 이름이 뭐지? : ");
 					String id = sc.next();
 					System.out.print("우리가 정한 암호가 뭐였지? : ");
@@ -524,7 +524,12 @@ public class Game_Main {
 								System.out.println("당신의 점수는 : " + point + "입니다.");
 								System.out.println();
 								dao.End(id, point);
-
+								System.out.println();
+								System.out.println("==================== 전체 랭킹 ====================");
+								ArrayList<PlayerDTO> List = dao.Ranking();
+								for (int i = 0; i < List.size(); i++) {
+									System.out.println(List.get(i).getID() + " / " + List.get(i).getPOINT());}
+								System.out.println();
 								break;
 
 								// Hard_Ballad
@@ -583,7 +588,7 @@ public class Game_Main {
 											if (hi.equals("hint") && hintCount > 0) {
 												hintCount -= 1;
 												System.out
-														.println(":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
+														.println( ":::    ::: ::::::::::: ::::    ::: :::::::::::  \r\n"
 																+ ":+:    :+:     :+:     :+:+:   :+:     :+:      \r\n"
 																+ "+:+    +:+     +:+     :+:+:+  +:+     +:+      \r\n"
 																+ "+#++:++#++     +#+     +#+ +:+ +#+     +#+      \r\n"
@@ -782,6 +787,12 @@ public class Game_Main {
 
 								System.out.println();
 								dao.End(id, point);
+								System.out.println();
+								System.out.println("==================== 전체 랭킹 ====================");
+								ArrayList<PlayerDTO> List = dao.Ranking();
+								for (int i = 0; i < List.size(); i++) {
+									System.out.println(List.get(i).getID() + " / " + List.get(i).getPOINT());}
+								System.out.println();
 								break;
 							}
 							// Easy_dance
@@ -1038,6 +1049,12 @@ public class Game_Main {
 
 								System.out.println();
 								dao.End(id, point);
+								System.out.println();
+								System.out.println("==================== 전체 랭킹 ====================");
+								ArrayList<PlayerDTO> List = dao.Ranking();
+								for (int i = 0; i < List.size(); i++) {
+									System.out.println(List.get(i).getID() + " / " + List.get(i).getPOINT());}
+								System.out.println();
 								break;
 
 								// Hard_Dance
@@ -1295,6 +1312,12 @@ public class Game_Main {
 
 								System.out.println();
 								dao.End(id, point);
+								System.out.println();
+								System.out.println("==================== 전체 랭킹 ====================");
+								ArrayList<PlayerDTO> List = dao.Ranking();
+								for (int i = 0; i < List.size(); i++) {
+									System.out.println(List.get(i).getID() + " / " + List.get(i).getPOINT());}
+								System.out.println();
 								break;
 								// Easy_Hiphop
 								// =================================================================================================
@@ -1551,6 +1574,12 @@ public class Game_Main {
 
 								System.out.println();
 								dao.End(id, point);
+								System.out.println();
+								System.out.println("==================== 전체 랭킹 ====================");
+								ArrayList<PlayerDTO> List = dao.Ranking();
+								for (int i = 0; i < List.size(); i++) {
+									System.out.println(List.get(i).getID() + " / " + List.get(i).getPOINT());}
+								System.out.println();
 								break;
 								// Hard_Hiphop
 								// ============================================================================================
@@ -1807,6 +1836,12 @@ public class Game_Main {
 
 								System.out.println();
 								dao.End(id, point);
+								System.out.println();
+								System.out.println("==================== 전체 랭킹 ====================");
+								ArrayList<PlayerDTO> List = dao.Ranking();
+								for (int i = 0; i < List.size(); i++) {
+									System.out.println(List.get(i).getID() + " / " + List.get(i).getPOINT());}
+								System.out.println();
 								break;
 							}
 
