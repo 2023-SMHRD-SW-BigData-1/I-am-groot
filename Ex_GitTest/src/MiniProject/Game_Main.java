@@ -50,10 +50,10 @@ public class Game_Main {
 		while (true) {
 
 			System.out.println("=========== MUSIC GAME 이야기 =============");
-//			System.out.println("난생 처음 보는 코드들에 속수무책으로 죽어가는 세연쌤반 학생들! 스트레스에 못 이겨 의욕을 잃어간다!");
-//			System.out.println("쉬는시간을 조금이나마 더 즐기기 위해서는 위험을 감지하는 학성, 민준, 하신, 희주 말고도 좋은 귀를 가진 동료가 더 필요한 상황! ");
-//			System.out.println("잠깐의 소리로도 선생님이 오시는지 기척을 잡아채는 귀를 가진 동료를 얻기 위한 모험을 떠나는데 ..!");
-//			System.out.println("=========================================");
+			System.out.println("난생 처음 보는 코드들에 속수무책으로 죽어가는 세연쌤반 학생들! 스트레스에 못 이겨 의욕을 잃어간다!");
+			System.out.println("쉬는시간을 조금이나마 더 즐기기 위해서는 위험을 감지하는 학성, 민준, 하신, 희주 말고도 좋은 귀를 가진 동료가 더 필요한 상황! ");
+			System.out.println("잠깐의 소리로도 선생님이 오시는지 기척을 잡아채는 귀를 가진 동료를 얻기 위한 모험을 떠나는데 ..!");
+			System.out.println("=========================================");
 			System.out.println();
 			System.out.println("계속 진행하려면 아무 키나 입력하고 엔터를 누르세요");
 			String anyKey = sc.next();
