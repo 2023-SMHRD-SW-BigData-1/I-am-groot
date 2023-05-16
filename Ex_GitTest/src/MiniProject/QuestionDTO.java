@@ -4,10 +4,8 @@ import java.util.Objects;
 
 public class QuestionDTO {
 
-	private String QS ; 
+	private String QS;
 	private String ANSWER;
-	
-	
 
 	public QuestionDTO(String qS, String aNSWER) {
 		super();
@@ -29,7 +27,6 @@ public class QuestionDTO {
 
 	public void setANSWER(String aNSWER) {
 		ANSWER = aNSWER;
-	} 
-	
-	
+	}
+
 }

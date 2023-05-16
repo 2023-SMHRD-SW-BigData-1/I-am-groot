@@ -403,7 +403,7 @@ public class DAO {
                 		+ "                                        \r\n"
                 		+ "");
                
-                return (point + (battpoint = 0));
+                return point = (point+battpoint);
             }
 		
 
